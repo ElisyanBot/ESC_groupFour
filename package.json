@@ -1,0 +1,14 @@
+{
+  "name": "hackerescaperooms-website",
+  "version": "1.0.0",
+  "description": "A website created to get a better understadning how to work as a front-end developer, created for a lesson for a class at Lernia polytechnic",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Larsson",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.43.2"
+  }
+}
