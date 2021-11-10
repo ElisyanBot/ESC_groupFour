@@ -685,9 +685,11 @@ nav.footer-nav li.margin-up {
 }
 
 #card-section {
-  width: 60%;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
   min-height: 20vh;
-  border: 1px solid red;
+  border: 1px solid gray;
   margin: 10rem auto;
   display: flex;
   justify-content: center;
