@@ -826,5 +826,30 @@ nav.footer-nav li.margin-up {
 }
 
 /* ================  gird design (wireframe layout for footer) ================================= */
+#filter-section {
+  width: 60%;
+  min-height: 20vh;
+  border: 1px solid red;
+  margin: 10rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#filter-section h2 {
+  font-size: 2rem;
+}
+
+#card-section {
+  width: 60%;
+  min-height: 20vh;
+  border: 1px solid red;
+  margin: 10rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#card-section h2 {
+  font-size: 2rem;
+}
 
 /*# sourceMappingURL=challengesMain.css.map */

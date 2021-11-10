@@ -1,0 +1,14 @@
+#card-section{
+    width: 60%;
+    min-height: 20vh;
+    border: 1px solid red;
+    margin: 10rem auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        font-size: 2rem;
+    }
+}
