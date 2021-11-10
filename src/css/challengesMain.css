@@ -604,16 +604,84 @@ nav.footer-nav li.margin-up {
 
 /* ================  gird design (wireframe layout for footer) ================================= */
 #filter-section {
-  width: 60%;
-  min-height: 20vh;
-  border: 1px solid red;
-  margin: 10rem auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  height: 20vh;
+  margin: 3rem 0;
+  gap: 3rem;
 }
 #filter-section h2 {
-  font-size: 2rem;
+  font-size: 3.6rem;
+  font-weight: 400;
+}
+#filter-section button#open-filter-btn {
+  width: 16rem;
+  height: 4rem;
+  font-size: 1.4rem;
+}
+
+.filter-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 10rem 20rem 20rem;
+  border: 2px solid gray;
+  gap: 1rem;
+  padding: 1rem;
+}
+.filter-container div {
+  width: 100%;
+  height: 100%;
+}
+.filter-container .grid-header {
+  grid-row: 1/1;
+  grid-column: 1/13;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.filter-container .grid-header h3 {
+  margin-top: 1rem;
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+.filter-container .grid-header button#close-filter-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  width: 5rem;
+  height: 5rem;
+}
+.filter-container .grid-header button#close-filter-btn .fas {
+  font-size: 2.8rem;
+}
+.filter-container .grid-child-one {
+  background-color: blue;
+  grid-column: 1/5;
+}
+.filter-container .grid-child-two {
+  background-color: green;
+  grid-column: 5/9;
+}
+.filter-container .grid-child-three {
+  background-color: pink;
+  grid-column: 9/13;
+  grid-row: 2/3;
+}
+.filter-container .grid-child-four {
+  background-color: orange;
+  grid-column: 5/9;
+  grid-row: 3/4;
 }
 
 #card-section {
