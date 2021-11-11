@@ -630,9 +630,9 @@ nav.footer-nav li.margin-up {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 10rem 20rem 20rem;
-  border: 2px solid gray;
-  gap: 1rem;
+  grid-template-rows: 10rem 15rem 15rem;
+  border: 3px solid gray;
+  gap: 0rem 1rem;
   padding: 1rem;
 }
 .filter-container div {
@@ -665,35 +665,71 @@ nav.footer-nav li.margin-up {
 .filter-container .grid-header button#close-filter-btn .fas {
   font-size: 2.8rem;
 }
+.filter-container .grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+}
+.filter-container .grid-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+.filter-container .grid-item div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
 .filter-container .grid-child-one {
-  background-color: blue;
   grid-column: 1/5;
 }
 .filter-container .grid-child-two {
-  background-color: green;
   grid-column: 5/9;
 }
+.filter-container .grid-child-two div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
 .filter-container .grid-child-three {
-  background-color: pink;
   grid-column: 9/13;
   grid-row: 2/3;
 }
+.filter-container .grid-child-three div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
 .filter-container .grid-child-four {
-  background-color: orange;
   grid-column: 5/9;
   grid-row: 3/4;
+}
+.filter-container .grid-child-four #filter-search-input {
+  width: 100%;
+  height: 5rem;
+  border: 3px solid gray;
+  border-radius: 0.5rem;
 }
 
 #card-section {
   width: 100%;
   max-width: 1300px;
   margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   min-height: 20vh;
   border: 1px solid gray;
   margin: 10rem auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #card-section h2 {
   font-size: 2rem;

@@ -20,11 +20,11 @@
     @include u.content-max-width;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 10rem 20rem 20rem;
+    grid-template-rows: 10rem 15rem 15rem;
     
-    border: 2px solid gray;
+    border: 3px solid gray;
 
-    gap: 1rem;
+    gap: 0rem  1rem;
     padding: 1rem;
 
     div{
@@ -55,25 +55,54 @@
             }
         }
     }
+
+    .grid-item{
+        @include u.flex(column, space-between, flex-start);
+        padding: 1rem;
+        h3{
+            font-size: u.$normal-font;
+            margin-bottom: 2rem; 
+        }
+        div{
+            @include u.flex(column, flex-start, flex-start);
+            gap: 1rem;
+        }
+
+    }
+
     .grid-child-one{
-        background-color: blue;
+        // background-color: blue;
         grid-column: 1/5;
         
     }
     .grid-child-two{
-        background-color: green;
+        // background-color: green;
         grid-column: 5/9;
         
+        div{
+            @include u.flex(row, flex-start, flex-start);
+            gap: 1rem;
+        }
     }
     .grid-child-three{
-        background-color: pink;
+        // background-color: pink;
         grid-column: 9/13;
         grid-row: 2/3;
-        
+        div{
+            @include u.flex(row, flex-start, flex-start);
+            gap: 1rem;
+        }
     }
     .grid-child-four{
-        background-color: orange;
+        // background-color: orange;
         grid-column: 5/9;
         grid-row: 3/4;
+
+        #filter-search-input{
+            width: 100%;
+            height: 5rem;
+            border: 3px solid gray;
+            border-radius: 0.5rem;
+        }
     }
 }
