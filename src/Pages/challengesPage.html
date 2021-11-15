@@ -36,11 +36,64 @@
     <main>
         <section id="filter-section">
             <!-- filter sections goes here -->
-            <h2> filter-section</h2>
+            <h2>Our challanges</h2>
+            <button id="open-filter-btn" class="third-btn"> Filter challange</button>
         </section>
+        <section class="filter-container">
+            <div class="grid-header"> 
+                <h3>Filter challenges</h3>
+                <button id="close-filter-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="grid-item grid-child-one">
+                <h3>By type</h3>
+                <div class="filter-byType-container">
+                    <input type="checkbox">
+                    <label for=""> Include Online challenges</label>
+                    <input type="checkbox">
+                    <label for=""> Include Online challenges</label>
+                </div>
+            </div>
+            <div class="grid-item grid-child-two">
+                <h3>By rank</h3>
+                <div class="filter-byRank-container">
+                    <ul class="rating-stars">
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                    </ul>
+                    <p> to </p>
+                    <ul class="rating-stars">
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                        <li>&#9733;</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-item grid-child-three">
+                <h3>By tags</h3>
+                <div class="filter-byTag-container">
+                    <button>Web</button>
+                    <button>Linux</button>
+                    <button>Cryptography</button>
+                    <button>Coding</button>
+                </div>
+            </div>
+            <div class="grid-item grid-child-four">
+                <h3>Or type to search for keyword</h3>
+                <div class="filter-bySearch-container">
+                    <input id="filter-search-input" type="text" placeholder="Start typing to filter">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================ card section =================== -->
+        
         <section id="card-section">
             <!-- Api rendered cards goes here! -->
-            <h2>card-section</h2>
         </section>
     </main>
     <!-- ========================= END of main content ========================== -->
