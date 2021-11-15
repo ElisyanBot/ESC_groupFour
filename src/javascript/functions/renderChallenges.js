@@ -1,6 +1,6 @@
 import { fetchData } from "./fetchData.js";
 
-async function renderChallenges() {
+export default async function renderChallenges() {
   const data = await fetchData();
   const cardSection = document.querySelector('#card-section')
   let idOfCard = 0;
