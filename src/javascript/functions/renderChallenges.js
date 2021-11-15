@@ -1,4 +1,5 @@
 import { fetchData } from "./fetchData.js";
+import { setStarsInRating } from "./renderStars.js";
 
 export default async function renderChallenges() {
   const data = await fetchData();
@@ -34,25 +35,9 @@ export default async function renderChallenges() {
 
     cardSection.appendChild(newCard);
 
-    function setStarsInRanking(idOfCard, rankinValue) {
-      const starsItems = document.querySelectorAll(`#id${idOfCard} .rating-stars li`);
-      let rankningNumber = rankinValue; //obs!! put ranking data from api in this param
-
-      //removes error from console
-      if (rankningNumber > 5) {
-        rankningNumber = 0
-        console.log(`ERR: challenge card ID: ${idOfCard} has has to high ranking value`)
-      }
-
-      for (let index = 0; index < rankningNumber; index++) {
-        starsItems[index].classList.add('checked')
-      }
-
-    };
-    setStarsInRanking(idOfCard, data.rating)
+    setStarsInRating(idOfCard, data.rating)
 
     idOfCard++;
   });
 }
 renderChallenges();
-
