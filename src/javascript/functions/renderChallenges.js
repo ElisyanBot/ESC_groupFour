@@ -22,18 +22,20 @@ export default async function renderChallenges() {
           <h2> ${data.title} </h2>
           <div class="card-subheader-container">
             <ul class="rating-stars">
-            <li>&#9733;</li>
-            <li>&#9733;</li>
-            <li>&#9733;</li>
-            <li>&#9733;</li>
-            <li>&#9733;</li>
+              <li>&#9733;</li>
+              <li>&#9733;</li>
+              <li>&#9733;</li>
+              <li>&#9733;</li>
+              <li>&#9733;</li>
             </ul>
-            <small>${data.minParticipants} - ${data.maxParticipants} participants</small>
+            <small>
+            ${data.minParticipants} - ${data.maxParticipants} participants
+            </small>
           </div>
           <p>${data.description}</p>
         </div>
         <div class="card-btn-container">
-        <button class="fourth-btn">Book this room</button>
+          <button class="fourth-btn">Book this room</button>
         </div>
       </div>
       `;
@@ -45,4 +47,3 @@ export default async function renderChallenges() {
     idOfCard++;
   });
 }
-renderChallenges();
