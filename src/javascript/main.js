@@ -5,3 +5,7 @@ MobileMeny();
 import renderChallenges from './functions/renderChallenges.js';
 
 renderChallenges();
+
+import filterByType from './functions/filterByType.js';
+
+filterByType();
