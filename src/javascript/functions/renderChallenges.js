@@ -5,10 +5,15 @@ export default async function renderChallenges() {
   const data = await fetchData();
   const cardSection = document.querySelector('#card-section')
   let idOfCard = 0;
+
   data.forEach(data => {
     const newCard = document.createElement('article');
-    newCard.setAttribute("class", "card");
-    newCard.setAttribute("id", "id" + idOfCard);
+    newCard.setAttribute("id", "id" + idOfCard); // Using id prefix to escape escaping when using querySelector when rendering stars
+    newCard.setAttribute("class", `card ${data.type}`);
+
+    for (let i = 0; i < data.labels.length; i++) {
+      newCard.classList.add(`${data.labels[i]}`);
+    }
 
     newCard.innerHTML = `
       <picture class="card-top-part"><img src = ${data.image}></picture>
