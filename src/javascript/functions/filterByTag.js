@@ -28,14 +28,3 @@ function displayCardWithTag(tag){
         }
     })
 }
-// `${tag.innerText}`
-
- 
-            //     let testArr = card.classList
-            //     testArr.forEach( cardClass => {
-            //         if(cardClass !== `${tag.innerText}`){
-            //             card.style.backgroundColor = 'red';
-            //         } else {
-            //             card.style.backgroundColor = 'blue';
-            //         }
-            //     })
