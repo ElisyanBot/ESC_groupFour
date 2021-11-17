@@ -1,5 +1,4 @@
 import MobileMeny from './functions/mobileMeny.js';
-
 MobileMeny();
 
 //render elements
@@ -11,6 +10,5 @@ renderfilterTagsInMeny();
 //filter functions
 import filterByType from './functions/filterByType.js';
 filterByType();
-import filterByTag from './functions/filterByTag.js';
-filterByTag();
+
 
