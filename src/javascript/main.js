@@ -10,5 +10,7 @@ renderfilterTagsInMeny();
 //filter functions
 import filterByType from './functions/filterByType.js';
 filterByType();
+import { byRatingFilterBtns } from './functions/filterByRating.js';
+byRatingFilterBtns();
 
 
