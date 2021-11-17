@@ -43,18 +43,18 @@ function checkTotalAtkiveTags(){
 /*
     [x] skapar en array med aktiva länkar
 */
-    function aktiveTagsToArray(){
-        let totalAktiveTags = checkTotalAtkiveTags();
-        const aktivTagsArray = [];
-        if(totalAktiveTags > 0){
-            for (const tagObj of testArry){
-                if(tagObj.aktive == true) {
-                    aktivTagsArray.push(tagObj.tagName)
-                }
+function aktiveTagsToArray(){
+    let totalAktiveTags = checkTotalAtkiveTags();
+    const aktivTagsArray = [];
+    if(totalAktiveTags > 0){
+        for (const tagObj of testArry){
+            if(tagObj.aktive == true) {
+                aktivTagsArray.push(tagObj.tagName)
             }
         }
-        return aktivTagsArray;
     }
+    return aktivTagsArray;
+}
 
 /*
   [x] funktion som: värderar om alla aktiva länkar efter aktiva länkar.
@@ -86,12 +86,9 @@ export default function filterByTag(){
 function displayCardWithTag(element, testArryIndx){
     if(element.style.backgroundColor !== 'lightgray') {
         element.style.backgroundColor = 'lightgray'
-        // findByCardTagName(element.innerText)
-
     } else {
         element.style.backgroundColor = 'white'
         CardTagNameRemove(element)
-        // mulitTagChecked(element);
     }
     testArry[testArryIndx].setToActive();
 }
