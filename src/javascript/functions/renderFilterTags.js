@@ -3,7 +3,7 @@ import { fetchData } from "./fetchData.js";
 export default async function renderTagsToFilterSection(){
     console.log('test')
     const data = await fetchData();
-    filterToMaxOneTagPerName(getLabelsFromApi(data));
+    let sorterdTags = filterToMaxOneTagPerName(getLabelsFromApi(data));
 }
 // [x] kolla igenom alla labels och spara dem i en ny array
 function getLabelsFromApi(dataApi){
@@ -15,9 +15,7 @@ function getLabelsFromApi(dataApi){
 }
 // [ ] filterara alla labels och om namnet är samma spara bara en av dem i ny arr
 function filterToMaxOneTagPerName(array){
-    let oldArray = array
-    console.log(oldArray)
-
-    // return newArray;
+    let newArray = array.filter((item, index)=> array.indexOf(item) === index)
+    return newArray;
 }
 // [ ] använd nya arrayen och skriv ut till filter sektionen alla existerande typer av taggarna.
