@@ -4,19 +4,28 @@
 
 
 export function byRatingFilterBtns(){
-    const biggerThan = document.querySelector('#rating-biggerThan');
-    const biggerThanStars = document.querySelectorAll('#rating-biggerThan > li');
-    const lessThanStars = document.querySelectorAll('#rating-lessThan > li');
-    let number = 0;
-   
-    biggerThan.addEventListener('click', (e) =>{
-        let arr = Array.prototype.slice.call(biggerThanStars);
+    const biggerThanList = document.querySelector('#rating-biggerThan');
+    const biggerThanItem = document.querySelectorAll('#rating-biggerThan > li');
+    const lessThanList = document.querySelector('#rating-lessThan');
+    const lessThanItem = document.querySelectorAll('#rating-lessThan > li');
+    
+    let lessThanNumber = setRatingFilter(lessThanList, lessThanItem, 0);
+    let biggerThanNumber = setRatingFilter(biggerThanList, biggerThanItem, 5);
+
+    console.log(biggerThanNumber,  lessThanNumber)
+}
+
+function setRatingFilter(starRatingListId, starRatingItemArr, startingValue){
+    let number = startingValue;
+    
+    starRatingListId.addEventListener('click', (e) =>{
+        let arr = Array.prototype.slice.call(starRatingItemArr);
 
         for (let index = 0; index < arr.length; index++) {
-            biggerThanStars[index].classList.remove('checked')    
+            starRatingItemArr[index].classList.remove('checked')    
           }
 
-        if(e.target !== biggerThan){
+        if(e.target !== starRatingListId){
             arr.forEach(Element =>{
                 if(e.target === Element){
                     number = arr.indexOf(Element) + 1;
@@ -25,14 +34,14 @@ export function byRatingFilterBtns(){
         }
 
         for (let index = 0; index < number; index++) {
-            biggerThanStars[index].classList.add('checked')    
+            starRatingItemArr[index].classList.add('checked')    
           }
         }
     )
  
-    return number //?
+    return number
 }
 
-
-
-   
+//[] vad händer om man clickar i att minsta vädet ska vara större än högsta?
+//[] 
+//[]
