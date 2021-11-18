@@ -12,7 +12,10 @@ if (document.querySelector("#card-articles-container")) {
 // For challenge
 import renderChallenges from './functions/renderChallenges.js';
 import filterByType from './functions/filterByType.js';
+import filterBySearch from './functions/filterBySearch.js';
 if (document.querySelector("#card-section")) {
   renderChallenges();
   filterByType();
+  filterBySearch();
 };
+
