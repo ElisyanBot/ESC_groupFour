@@ -9,6 +9,7 @@ if (document.querySelector("#card-articles-container")) {
 }
 
 // For challenge
+import showFilters from './functions/showFilters.js';
 import renderChallenges from './functions/renderChallenges.js';
 import filterByType from './functions/filterByType.js';
 import filterBySearch from './functions/filterBySearch.js';
@@ -22,4 +23,5 @@ if (document.querySelector("#card-section")) {
   filterByType();
   byRatingFilterBtns();
   renderfilterTagsInMeny();
+  showFilters()
 };
