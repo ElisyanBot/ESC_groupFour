@@ -19,6 +19,7 @@ import renderfilterTagsInMeny from './functions/renderFilterTags.js';
 if (document.querySelector("#card-section")) {
   renderChallenges();
   filterBySearch();
+  filterByType();
   byRatingFilterBtns();
   renderfilterTagsInMeny();
 };
