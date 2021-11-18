@@ -21,10 +21,13 @@ function setRatingFilter(starRatingListId, starRatingItemArr, startingValue){
     starRatingListId.addEventListener('click', (e) =>{
         let arr = Array.prototype.slice.call(starRatingItemArr);
 
+        //clears all stars
         for (let index = 0; index < arr.length; index++) {
             starRatingItemArr[index].classList.remove('checked')    
           }
 
+        //geting the set value
+        //funkar det att skapa en function av detta?
         if(e.target !== starRatingListId){
             arr.forEach(Element =>{
                 if(e.target === Element){
@@ -33,6 +36,7 @@ function setRatingFilter(starRatingListId, starRatingItemArr, startingValue){
             })   
         }
 
+        //sets new number of stars
         for (let index = 0; index < number; index++) {
             starRatingItemArr[index].classList.add('checked')    
           }
@@ -43,5 +47,4 @@ function setRatingFilter(starRatingListId, starRatingItemArr, startingValue){
 }
 
 //[] vad händer om man clickar i att minsta vädet ska vara större än högsta?
-//[] 
-//[]
+//  -- om lessthan is greater than biggerThan byt ordningen?
