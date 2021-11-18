@@ -13,9 +13,12 @@ import renderChallenges from './functions/renderChallenges.js';
 import filterByType from './functions/filterByType.js';
 import filterBySearch from './functions/filterBySearch.js';
 import { byRatingFilterBtns } from './functions/filterByRating.js';
+
+import renderfilterTagsInMeny from './functions/renderFilterTags.js';
+
 if (document.querySelector("#card-section")) {
   renderChallenges();
-  filterByType();
   filterBySearch();
   byRatingFilterBtns();
+  renderfilterTagsInMeny();
 };
