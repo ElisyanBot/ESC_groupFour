@@ -1,6 +1,6 @@
 export default function renderFilter() {
 
-    // Main function to render the filter-section into the DOM.
+    // Main function to render the filter-container into the DOM.
     const filterBtn = document.getElementById('open-filter-btn');
     const filterContainer = document.createElement("section");
         filterContainer.className = "filter-container";
