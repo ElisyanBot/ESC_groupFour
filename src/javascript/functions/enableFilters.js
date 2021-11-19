@@ -13,7 +13,7 @@ export default function enableFilters() {
 
     filterBtn.addEventListener('click', () => {
 
-        renderFilter()
+        renderFilter() //renderFilter.js
         disableFilters()
 
         // When the filter-section has been rendered, call additional functions for the filter.
