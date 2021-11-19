@@ -12,7 +12,7 @@ if (document.querySelector("#card-articles-container")) {
 import enableFilters from './functions/enableFilters.js';
 import renderChallenges from './functions/renderChallenges.js';
 
-
+// For when ChallangesPage is rendered
 if (document.querySelector("#card-section")) {
   renderChallenges();
   enableFilters();
