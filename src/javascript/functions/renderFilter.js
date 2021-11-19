@@ -56,7 +56,5 @@ export default function renderFilter() {
                     <input id="filter-search-input" type="text" placeholder="Start typing to filter">
                 </div>
             </div>
-        `;
-        
-        
+        `;      
 }
