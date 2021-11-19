@@ -27,7 +27,7 @@ export default function enableFilters() {
 }
 
 
-// Function gets called to be able to disable the filter-section. It gets removed from the DOM.
+// Function gets called to be able to disable the filter-section. It will be removed from the DOM.
 function disableFilters() {
     
     const closeFilterBtn = document.getElementById('close-filter-btn');
