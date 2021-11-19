@@ -6,7 +6,7 @@ import renderfilterTagsInMeny from './renderFilterTags.js';
 
 
 
-// Function to enable the filter-section. It will get rendered into the DOM.
+// Function to enable the filter-container. It will get rendered into the DOM.
 export default function enableFilters() {
 
     const filterBtn = document.getElementById('open-filter-btn');
@@ -16,8 +16,8 @@ export default function enableFilters() {
         renderFilter() //renderFilter.js
         disableFilters()
 
-        // When the filter-section has been rendered, call additional functions for the filter.
-        if (document.querySelector("#filter-section")) {
+        // When the filter-container has been rendered, call additional functions for the filter.
+        if (document.querySelector(".filter-container")) {
             filterBySearch();
             filterByType();
             byRatingFilterBtns();
@@ -27,7 +27,7 @@ export default function enableFilters() {
 }
 
 
-// Function gets called to be able to disable the filter-section. It will be removed from the DOM.
+// Function gets called to be able to disable the filter-container. It will be removed from the DOM.
 function disableFilters() {
     
     const closeFilterBtn = document.getElementById('close-filter-btn');
