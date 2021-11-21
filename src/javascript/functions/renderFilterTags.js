@@ -2,11 +2,9 @@ import { fetchData } from "./fetchData.js";
 import filterByTag from './filterByTag.js';
 // [x] hämta labels från fetch.
 export default async function renderTagsToFilterSection(){
-    console.log('test')
     const data = await fetchData();
     let sorterdTags = filterToMaxOneTagPerName(getLabelsFromApi(data));
     renderToFilterByTag(sorterdTags);
-    
     //add btn finctionallity to all tags
     filterByTag(); 
 }
@@ -19,11 +17,10 @@ function getLabelsFromApi(dataApi){
     return newLabelsAarry;
 }
 // [x] filterara alla labels och om namnet är samma spara bara en av dem i ny arr
-function filterToMaxOneTagPerName(array){
-    let newArray = array.filter((item, index)=> array.indexOf(item) === index)
-    return newArray;
+function filterToMaxOneTagPerName(labelsArray){
+    return labelsArray.filter((item, index) => labelsArray.indexOf(item) === index);
 }
-// [ ] använd nya arrayen och skriv ut till filter sektionen alla existerande typer av taggarna.
+// [x] använd nya arrayen och skriv ut till filter sektionen => alla existerande typer av taggarna.
 function renderToFilterByTag(arrayOfTags){
     const byTagSecttion = document.querySelector('.filter-byTag-container');
     let output = ''
@@ -31,5 +28,4 @@ function renderToFilterByTag(arrayOfTags){
         output += `<button>${element}</button>`
     });
     byTagSecttion.innerHTML = output
-
 }
