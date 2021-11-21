@@ -6,7 +6,7 @@ function createTagObj(tagName){
     return{
         tagName: tagName,
         active: false,
-        setToActive: function(){
+        toggleActiveStatus: function(){
             this.active === false ? 
             this.active = true : 
             this.active = false;
@@ -14,13 +14,12 @@ function createTagObj(tagName){
     }
 }
 
-
 //fetch the index of an tagObj if the tabBtn has the same name.
 function getObjIndex(tagBtnText){
     let indexOfTag = 0;
     for (const tag of tagStorageArray) {
         if (tagBtnText === tag.tagName) 
-        indexOfTag = tagStorageArray.indexOf(tag) ;
+        indexOfTag = tagStorageArray.indexOf(tag);
     }
     return indexOfTag;
 }
@@ -28,52 +27,48 @@ function getObjIndex(tagBtnText){
 /* ========================= main function ==================================*/
 //creates dynamic addEventListener on TagBtn, if the labels(tags) change
 export default function filterByTag(){
-    const byTagBtns = document.querySelectorAll('.filter-byTag-container button');
-
-    byTagBtns.forEach(tagBtn =>{
+    document.querySelectorAll('.filter-byTag-container button')
+    .forEach(tagBtn => {
         tagStorageArray.push(createTagObj(tagBtn.innerText));
         tagBtn.addEventListener('click', () => {
-            displayCardWithTag(tagBtn, getObjIndex(tagBtn.innerText));
+            isTagAktive(tagBtn, getObjIndex(tagBtn.innerText));
             displayCardsForActiveTags();
         })
     })
 };
 
-//
-function displayCardWithTag(tagBtn, tagObjIndex){
+//behövs denna dunktionen?
+function isTagAktive(tagBtn, tagObjIndex){
     if(tagBtn.style.backgroundColor !== 'lightgray') 
         tagBtn.style.backgroundColor = 'lightgray';
     else {
         tagBtn.style.backgroundColor = 'white';
         CardTagNameRemove(tagBtn);
     }
-    tagStorageArray[tagObjIndex].setToActive();
+    tagStorageArray[tagObjIndex].toggleActiveStatus();
 }
 
-//displays all cards and re-filters them on change
+//displays all cards and re-filters them on change /* försök göra denna till en extern funktion som tar in alla filter...*/
 function CardTagNameRemove(){
     const cards = document.querySelectorAll('.card');
     const cbOnline = document.querySelector("#filter-checkbox-online");
     const cbOnsite = document.querySelector("#filter-checkbox-onsite");
-    
-    cards.forEach( card => {
-        card.style.display = 'flex';
-        card.style.backgroundColor = 'white';
-    })
-    
+   
     if(cbOnline.checked == false) showOnlineCards();
     if(cbOnsite.checked == false) showOnsiteCards();
+
+    cards.forEach( card => {
+        card.style.display = 'flex';
+    }) 
 }
 
 //displays card if the tag(label) is ative
 function displayCardsForActiveTags(){
-    const activeTags = pushActiveTagsToArray();
-    activeTags.forEach(index =>{
+    const activeTagsArray = pushActiveTagsToArray();
+    activeTagsArray.forEach(index =>{
         findByCardTagName(index)
-        console.log('works')
     })
 } 
-
 
 //looking at the tagStorage for of tabObj.active == true
 function checkTotalActiveTags(){
@@ -93,20 +88,20 @@ function pushActiveTagsToArray(){
             if(tagObj.active == true) activTagsArray.push(tagObj.tagName);
         }
     }
-    console.log(activTagsArray)
     return activTagsArray;
 }
-
 
 //finds card with matching challenges classList.value 
 function findByCardTagName(tagIndex){
     const cards = document.querySelectorAll('.card');
     cards.forEach( card => {
-        console.log('works')
-        if(card.style.display === 'none') return //om ett kort har display: none; returnera inget annars fortsätt
-        let newRegEx = new RegExp(`${tagIndex}`); //kollar på classlist.value som är en sträng av alla klasser.
+        if(card.style.display === 'none') return;
+        //searsch thorugh card.classlist.value after string match
+        let newRegEx = new RegExp(`${tagIndex}`);
         if(!newRegEx.test(card.classList.value)){
             card.style.display = 'none';
         }
     })
 }
+
+// [] fixa så att den lyssnar på de andra filteren.
