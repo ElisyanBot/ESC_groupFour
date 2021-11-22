@@ -12,11 +12,10 @@ export default function bookChallenge(data) {
 
 
 
-        // STEP 1 - RENDER THE MODAL - USER INPUT PREFERABLE DATE
+        // STEP 1 - RENDER THE MODAL - USER INPUT PREFERED DATE
         const modal = document.createElement('div');
         modal.className = 'modal-container';
         document.body.appendChild(modal);
-
         modal.innerHTML = `
               <h1>Book room "${data[i].title}" (step 1)</h1>
               <p>What date would you like to come?<p>
@@ -27,7 +26,6 @@ export default function bookChallenge(data) {
 
         // STEP 2 UPDATE MODAL - INPUT USER CREDENTIALS - CHOOSE TIME & PARTICIPANTS 
         if (document.querySelector('#search-btn')) {
-
           const searchBtn = document.getElementById("search-btn");
           const DateInput = document.getElementById("date-input");
 
@@ -50,12 +48,11 @@ export default function bookChallenge(data) {
               <button class="fourth-btn" id="submit-btn">Submit booking</button>
               `;
 
-            // GET TIMES FROM BOOKING API
+            // GET AVAILABLE TIMES FROM BOOKING API
             fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" + "?date=" + DateInput.value)
               .then(response => response.json())
               .then(time => {
                 for (let i = 0; i < time.slots.length; i++) {
-
                   const optionTime = document.createElement("option");
                   optionTime.textContent = time.slots[i];
                   document.getElementById("available-time").appendChild(optionTime);
@@ -64,13 +61,10 @@ export default function bookChallenge(data) {
 
             // GET NUMBER OF PARTICIPANTS DEPENDING ON MIN/MAX OF THE CHALLENGE
             for (let people = data[i].minParticipants; people <= data[i].maxParticipants; people++) {
-
               const participantsCount = document.createElement("option");
               participantsCount.textContent = people + " Participants";
               document.getElementById("participants-count").appendChild(participantsCount);
             }
-
-            
 
             // STEP 3 SUBMIT BOOKING - SAVE USER CREDENTIALS AS OBJECT - SEND BOOKING DETAILS TO API
             if (document.querySelector('#submit-btn')) {
@@ -79,9 +73,7 @@ export default function bookChallenge(data) {
               const emailInput = document.getElementById('email-input');
 
               submitBtn.addEventListener("click", () => {
-                // const time = document.getElementById('available-time').value;
-                // const people = document.getElementById('participants-count').value;
-                const userCredentials = {name: nameInput.value, email: emailInput.value, date: DateInput.value, time: document.getElementById('available-time').value, participants: document.getElementById('participants-count').value.replace(' Participants','')};
+                const userCredentials = { name: nameInput.value, email: emailInput.value, date: DateInput.value, time: document.getElementById('available-time').value, participants: document.getElementById('participants-count').value.replace(' Participants', '') };
                 console.log(userCredentials);
 
               })
