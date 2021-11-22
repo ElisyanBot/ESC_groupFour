@@ -1,7 +1,7 @@
 import { setStarsInRating } from "./renderStars.js";
 
 export default async function indexRenderChallenges(dataUnsorted) {
-  const cardSection = document.querySelector('#card-articles-container')
+  const cardSection = document.querySelector('#card-section')
   let idOfCard = 0;
 
   const data = dataUnsorted.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
