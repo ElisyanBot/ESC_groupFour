@@ -1,8 +1,8 @@
-// [x] när man klickar på en stjäna ska man få ett värede från 1 - 5
-// [x] lyckas få stjärnorna att fyllas i till och med värdet som är valt
-// [x] skapa ett objekt som kommer ihåg värdet som är valt
 
-export const storage = { 
+import activeFilters from "./activeFilterCheck.js";
+
+
+const RatingStorage = { 
     lessThanValue: 0, 
     biggerThanValue: 5
 };
@@ -16,12 +16,12 @@ export function byRatingFilterBtns(){
  
     
     lessThanList.addEventListener('click', (e) => {
-        storage.lessThanValue = setRatingFilter(e, lessThanItem, lessThanItem);
-        displayCards(storage.lessThanValue, storage.biggerThanValue);
+        RatingStorage.lessThanValue = setRatingFilter(e, lessThanItem, lessThanItem);
+        activeFilters(RatingStorage.lessThanValue, RatingStorage.biggerThanValue);
     });
     biggerThanList.addEventListener('click', (e) => {
-        storage.biggerThanValue = setRatingFilter(e, biggerThanItem, biggerThanItem);
-        displayCards(storage.lessThanValue, storage.biggerThanValue);
+        RatingStorage.biggerThanValue = setRatingFilter(e, biggerThanItem, biggerThanItem);
+        activeFilters(RatingStorage.lessThanValue, RatingStorage.biggerThanValue);
      });
 }
 
@@ -54,17 +54,12 @@ function getRatingFromCard(card){
     });
     return cardRating;
 }
-// [x] funktion som gömmer kortet om stjärnona är mer eller mindre
-// - om ena är större än det andra, dölj de som inte stämmer
-// -
-//[x] vad händer om man clickar i att minsta vädet ska vara större än högsta?
-//  -- om lessthan is greater than biggerThan byt ordningen?
 
-    function displayCards(lessThan, biggerThan){
+   export function displayCardsByRating(){
         document.querySelectorAll('.card').forEach( card => {
-        let checkOrderOfInput = lessThan < biggerThan ? 
-        getRatingFromCard(card) < lessThan || getRatingFromCard(card) > biggerThan :
-        getRatingFromCard(card) > lessThan || getRatingFromCard(card) < biggerThan ;
+        let checkOrderOfInput = RatingStorage.lessThanValue < RatingStorage.biggerThanValue ? 
+        getRatingFromCard(card) < RatingStorage.lessThanValue || getRatingFromCard(card) > RatingStorage.biggerThanValue :
+        getRatingFromCard(card) > RatingStorage.lessThanValue || getRatingFromCard(card) < RatingStorage.biggerThanValue ;
         
             if(checkOrderOfInput){
                 if(card.style.display == "none") return;

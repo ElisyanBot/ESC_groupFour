@@ -1,4 +1,6 @@
 import {showOnlineCards, showOnsiteCards} from "./filterByType.js";
+import activeFilters from "./activeFilterCheck.js";
+
 
 const tagStorageArray = []
 //Factory function, creates an tag(label) obj
@@ -32,38 +34,23 @@ export default function filterByTag(){
         tagStorageArray.push(createTagObj(tagBtn.innerText));
         tagBtn.addEventListener('click', () => {
             isTagAktive(tagBtn, getObjIndex(tagBtn.innerText));
-            displayCardsForActiveTags();
+            activeFilters(); //bytas ut emot aktiveTagsCheck.js
         })
     })
 };
 
-//behövs denna dunktionen?
+//behövs denna funktionen?
 function isTagAktive(tagBtn, tagObjIndex){
     if(tagBtn.style.backgroundColor !== 'lightgray') 
         tagBtn.style.backgroundColor = 'lightgray';
     else {
         tagBtn.style.backgroundColor = 'white';
-        CardTagNameRemove(tagBtn);
     }
     tagStorageArray[tagObjIndex].toggleActiveStatus();
 }
 
-//displays all cards and re-filters them on change /* försök göra denna till en extern funktion som tar in alla filter...*/
-function CardTagNameRemove(){
-    const cards = document.querySelectorAll('.card');
-    const cbOnline = document.querySelector("#filter-checkbox-online");
-    const cbOnsite = document.querySelector("#filter-checkbox-onsite");
-   
-    if(cbOnline.checked == false) showOnlineCards();
-    if(cbOnsite.checked == false) showOnsiteCards();
-
-    cards.forEach( card => {
-        card.style.display = 'flex';
-    }) 
-}
-
 //displays card if the tag(label) is ative
-function displayCardsForActiveTags(){
+export function displayCardsForActiveTags(){
     const activeTagsArray = pushActiveTagsToArray();
     activeTagsArray.forEach(index =>{
         findByCardTagName(index)
@@ -103,5 +90,3 @@ function findByCardTagName(tagIndex){
         }
     })
 }
-
-// [] fixa så att den lyssnar på de andra filteren.
