@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 // For all
 import MobileMeny from './functions/mobileMeny.js';
 MobileMeny();
@@ -7,14 +8,14 @@ const data = await fetchData();
 
 // For index
 import indexRenderChallenges from './functions/indexRenderChallenges.js';
-if (window.location.pathname == "/index.html") {
+if (body.className == "index") {
   indexRenderChallenges(data);
 }
 
 // For challenge
 import renderChallenges from './functions/renderChallenges.js';
 import enableFilters from './functions/enableFilters.js';
-if (window.location.pathname == "/src/Pages/challengesPage.html") {
+if (body.className == "challengesPage") {
   enableFilters(data);
   renderChallenges(data);
 };
