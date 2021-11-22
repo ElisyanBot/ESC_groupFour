@@ -1,7 +1,6 @@
 import {showOnlineCards, showOnsiteCards} from "./filterByType.js";
 import activeFilters from "./activeFilterCheck.js";
 
-
 const tagStorageArray = []
 //Factory function, creates an tag(label) obj
 function createTagObj(tagName){

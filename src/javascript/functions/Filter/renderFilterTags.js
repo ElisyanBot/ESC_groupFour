@@ -1,6 +1,6 @@
 import filterByTag from './filterByTag.js';
 // [x] hämta labels från fetch.
-export default async function renderTagsToFilterSection(data) {
+export default function renderTagsToFilterSection(data) {
     let sorterdTags = filterToMaxOneTagPerName(getLabelsFromApi(data));
     renderToFilterByTag(sorterdTags);
     //add btn finctionallity to all tags

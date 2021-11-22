@@ -3,11 +3,8 @@ import activeFilters from "./activeFilterCheck.js";
 export default function filterByType() {
   const cbOnline = document.querySelector("#filter-checkbox-online");
   const cbOnsite = document.querySelector("#filter-checkbox-onsite");
-
-
-
+  
   cbOnline.addEventListener("click", () => activeFilters());
-
   cbOnsite.addEventListener("click", () => activeFilters());
 }
 
@@ -19,8 +16,7 @@ export function showOnlineCards () {
     for (let i = 0; i < onlineCards.length; i++) {
       onlineCards[i].style.display = "flex";
     }
-  }
-  else {
+  } else {
     for (let i = 0; i < onlineCards.length; i++) {
       onlineCards[i].style.display = "none";
     }
@@ -35,8 +31,7 @@ export function showOnsiteCards() {
     for (let i = 0; i < onsiteCards.length; i++) {
       onsiteCards[i].style.display = "flex";
     }
-  }
-  else {
+  } else {
     for (let i = 0; i < onsiteCards.length; i++) {
       onsiteCards[i].style.display = "none";
     }
