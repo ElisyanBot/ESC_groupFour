@@ -1,11 +1,14 @@
+import activeFilters from "./activeFilterCheck.js";
+
 export default function filterByType() {
   const cbOnline = document.querySelector("#filter-checkbox-online");
   const cbOnsite = document.querySelector("#filter-checkbox-onsite");
 
 
-  cbOnline.addEventListener("click", () => showOnlineCards());
 
-  cbOnsite.addEventListener("click", () => showOnsiteCards());
+  cbOnline.addEventListener("click", () => activeFilters());
+
+  cbOnsite.addEventListener("click", () => activeFilters());
 }
 
 export function showOnlineCards () {
