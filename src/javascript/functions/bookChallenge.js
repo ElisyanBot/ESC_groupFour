@@ -2,15 +2,17 @@ export default function bookChallenge(data) {
 
 
   setTimeout(() => {
+
+    // TARGET CORRECT BUTTON FROM EACH CHALLENGE
     let bookBtn = document.querySelectorAll(".card .fourth-btn");
 
     for (let i = 0; i < bookBtn.length; i++) {
       bookBtn[i].addEventListener("click", () => {
         console.log(data[i].title);
 
-        
 
-        // STEP 1 - RENDER THE MODAL - CHOOSE DATE
+
+        // STEP 1 - RENDER THE MODAL - USER INPUT PREFERABLE DATE
         const modal = document.createElement('div');
         modal.className = 'modal-container';
         document.body.appendChild(modal);
@@ -39,10 +41,10 @@ export default function bookChallenge(data) {
               <input type="text" id="email-input">
 
               <h3>What time?</h3>
-              <select name="Time" id="available-time"></select>
+              <select name="time" id="available-time"></select>
 
               <h3>How many participants?</h3>
-              <select name="Time" id="participants-count"></select>
+              <select name="people" id="participants-count"></select>
 
 
               <button class="fourth-btn" id="submit-btn">Submit booking</button>
@@ -57,26 +59,31 @@ export default function bookChallenge(data) {
                   const optionTime = document.createElement("option");
                   optionTime.textContent = time.slots[i];
                   document.getElementById("available-time").appendChild(optionTime);
-
                 }
               })
 
-              // GET NUMBER OF PARTICIPANTS DEPENDING ON MIN/MAX OF THE CHALLENGE
-              for (let people = data[i].minParticipants; people <= data[i].maxParticipants; people++) {
-                
-                const participantsCount = document.createElement("option");
-                participantsCount.textContent = people + " Participants";
-                document.getElementById("participants-count").appendChild(participantsCount);
-              }
+            // GET NUMBER OF PARTICIPANTS DEPENDING ON MIN/MAX OF THE CHALLENGE
+            for (let people = data[i].minParticipants; people <= data[i].maxParticipants; people++) {
 
+              const participantsCount = document.createElement("option");
+              participantsCount.textContent = people + " Participants";
+              document.getElementById("participants-count").appendChild(participantsCount);
+            }
 
+            
 
-            // STEP 3
+            // STEP 3 SUBMIT BOOKING - SAVE USER CREDENTIALS AS OBJECT - SEND BOOKING DETAILS TO API
             if (document.querySelector('#submit-btn')) {
               const submitBtn = document.getElementById("submit-btn");
+              const nameInput = document.getElementById('name-input');
+              const emailInput = document.getElementById('email-input');
 
               submitBtn.addEventListener("click", () => {
-                // HÄR SKA DE HÄNDA GREJORRRRR
+                // const time = document.getElementById('available-time').value;
+                // const people = document.getElementById('participants-count').value;
+                const userCredentials = {name: nameInput.value, email: emailInput.value, date: DateInput.value, time: document.getElementById('available-time').value, participants: document.getElementById('participants-count').value.replace(' Participants','')};
+                console.log(userCredentials);
+
               })
             }
 
@@ -87,7 +94,7 @@ export default function bookChallenge(data) {
         }
 
 
-      
+
       });
     }
   }, 200);
