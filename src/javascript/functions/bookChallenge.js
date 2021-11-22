@@ -10,7 +10,7 @@ export default function bookChallenge(data) {
 
         
 
-        // STEP 1
+        // STEP 1 - RENDER THE MODAL - CHOOSE DATE
         const modal = document.createElement('div');
         modal.className = 'modal-container';
         document.body.appendChild(modal);
@@ -23,7 +23,7 @@ export default function bookChallenge(data) {
               <button class="fourth-btn" id="search-btn">Search available times</button>
               `;
 
-        // STEP 2
+        // STEP 2 UPDATE MODAL - INPUT USER CREDENTIALS - CHOOSE TIME & PARTICIPANTS 
         if (document.querySelector('#search-btn')) {
 
           const searchBtn = document.getElementById("search-btn");
@@ -48,7 +48,7 @@ export default function bookChallenge(data) {
               <button class="fourth-btn" id="submit-btn">Submit booking</button>
               `;
 
-            // GET AVAILABLE TIME FROM API
+            // GET TIMES FROM BOOKING API
             fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" + "?date=" + DateInput.value)
               .then(response => response.json())
               .then(time => {
@@ -87,7 +87,7 @@ export default function bookChallenge(data) {
         }
 
 
-        //bookingModal(data[i].title, data[i].minParticipants, data[i].maxParticipants);
+      
       });
     }
   }, 200);
