@@ -14,7 +14,6 @@ export default function filterByType() {
 export function showOnlineCards () {
   const onlineCards = document.querySelectorAll(".online");
   const cbOnline = document.querySelector("#filter-checkbox-online");
-  const cbOnsite = document.querySelector("#filter-checkbox-onsite");
 
   if (cbOnline.checked == true) {
     for (let i = 0; i < onlineCards.length; i++) {
@@ -30,7 +29,6 @@ export function showOnlineCards () {
 
 export function showOnsiteCards() {
   const onsiteCards = document.querySelectorAll(".onsite");
-  const cbOnline = document.querySelector("#filter-checkbox-online");
   const cbOnsite = document.querySelector("#filter-checkbox-onsite");
 
   if (cbOnsite.checked == true) {

@@ -60,7 +60,7 @@ function getRatingFromCard(card){
         let checkOrderOfInput = RatingStorage.lessThanValue < RatingStorage.biggerThanValue ? 
         getRatingFromCard(card) < RatingStorage.lessThanValue || getRatingFromCard(card) > RatingStorage.biggerThanValue :
         getRatingFromCard(card) > RatingStorage.lessThanValue || getRatingFromCard(card) < RatingStorage.biggerThanValue ;
-        
+            
             if(checkOrderOfInput){
                 if(card.style.display == "none") return;
                 card.style.display = "none";

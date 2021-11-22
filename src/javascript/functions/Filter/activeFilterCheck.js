@@ -12,9 +12,9 @@ export default function activeFilters(){
     //displays all cards
     showAllCards();
     //filter cards out if filters is active
+    LookForSearchInputValue();
     if(document.querySelector("#filter-checkbox-online").checked == false) showOnlineCards();
     if(document.querySelector("#filter-checkbox-onsite").checked == false) showOnsiteCards();
     displayCardsByRating();
     displayCardsForActiveTags();
-    LookForSearchInputValue();
 }

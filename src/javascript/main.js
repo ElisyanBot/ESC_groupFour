@@ -14,7 +14,7 @@ if (body.className == "index") {
 
 // For challenge
 import renderChallenges from './functions/renderChallenges.js';
-import enableFilters from './functions/enableFilters.js';
+import enableFilters from './functions/filter/enableFilters.js';
 if (body.className == "challengesPage") {
   enableFilters(data);
   renderChallenges(data);
