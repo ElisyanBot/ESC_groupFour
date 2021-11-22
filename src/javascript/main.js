@@ -2,18 +2,19 @@
 import MobileMeny from './functions/mobileMeny.js';
 MobileMeny();
 
+import { fetchData } from "./functions/fetchData.js";
+const data = await fetchData();
+
 // For index
 import indexRenderChallenges from './functions/indexRenderChallenges.js';
 if (document.querySelector("#card-articles-container")) {
-  indexRenderChallenges();
+  indexRenderChallenges(data);
 }
 
 // For challenge
-import enableFilters from './functions/enableFilters.js';
 import renderChallenges from './functions/renderChallenges.js';
-
-// For when ChallangesPage is rendered
+import enableFilters from './functions/enableFilters.js';
 if (document.querySelector("#card-section")) {
-  renderChallenges();
-  enableFilters();
+  enableFilters(data);
+  renderChallenges(data);
 };

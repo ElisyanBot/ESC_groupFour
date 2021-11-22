@@ -1,8 +1,6 @@
-import { fetchData } from "./fetchData.js";
 import { setStarsInRating } from "./renderStars.js";
 
-export default async function indexRenderChallenges() {
-  const dataUnsorted = await fetchData();
+export default async function indexRenderChallenges(dataUnsorted) {
   const cardSection = document.querySelector('#card-articles-container')
   let idOfCard = 0;
 

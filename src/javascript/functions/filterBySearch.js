@@ -1,8 +1,4 @@
-import { fetchData } from "./fetchData.js";
-
-export default async function filterBySearch() {
-    await fetchData();
-
+export default function filterBySearch() {
     const cards = document.querySelectorAll('article');
     const input = document.querySelector('#filter-search-input');
     input.addEventListener('keyup', () => {
