@@ -73,24 +73,35 @@ export default function bookChallenge(data) {
               const emailInput = document.getElementById('email-input');
 
               submitBtn.addEventListener("click", () => {
-                const userCredentials = { name: nameInput.value, email: emailInput.value, date: DateInput.value, time: document.getElementById('available-time').value, participants: document.getElementById('participants-count').value.replace(' Participants', '') };
-                console.log(userCredentials);
+                const bookingCredentials = { name: nameInput.value, email: emailInput.value, date: DateInput.value, time: document.getElementById('available-time').value, participants: document.getElementById('participants-count').value.replace(' Participants', '') };
+                console.log(bookingCredentials.name);
 
+                fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
+                  method: 'POST',
+                  mode: 'cors',
+                  body: JSON.stringify({
+                    name: bookingCredentials.name,
+                    email: bookingCredentials.email,
+                    date: bookingCredentials.date,
+                    time: bookingCredentials.time,
+                    participants: bookingCredentials.participants,
+                  }),
+                  headers: { 'Content-Type': 'application/json' }
+                }).then(function (response) {
+                  if (response.ok) {
+                    return response.json();
+                  }
+                  return Promise.reject(response);
+                }).then(function (data) {
+                  console.log(data);
+                }).catch(function (error) {
+                  console.warn('Something went wrong.', error);
+                });
               })
             }
-
-
-
-
           })
         }
-
-
-
       });
     }
   }, 200);
-
-
-
 }
