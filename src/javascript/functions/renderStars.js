@@ -1,7 +1,6 @@
 export function setStarsInRating(idOfCard, ratingValue) {
   const starsItems = document.querySelectorAll(`#id${idOfCard} .rating-stars li`);
-  let ratingNumber = ratingValue >= 0.5 ? Math.ceil(ratingValue) : Math.floor(ratingValue);
-
+  let ratingNumber = ratingValue;
 
   //removes error from console
   if (ratingNumber > 5) {
@@ -12,5 +11,4 @@ export function setStarsInRating(idOfCard, ratingValue) {
   for (let index = 0; index < ratingNumber; index++) {
     starsItems[index].classList.add('checked')
   }
-
 };
