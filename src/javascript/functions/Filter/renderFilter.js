@@ -28,7 +28,7 @@ export default function renderFilter() {
                 <h3>By rank</h3>
                 <div class="filter-byRank-container">
                     <ul id="rating-lessThan" class="rating-stars">
-                        <li class="checked">&#9733;</li>
+                        <li>&#9733;</li>
                         <li>&#9733;</li>
                         <li>&#9733;</li>
                         <li>&#9733;</li>
