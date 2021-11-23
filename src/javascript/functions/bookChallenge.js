@@ -34,17 +34,12 @@ export default function bookChallenge(data) {
               <h1>Book room "${data[i].title}" (step 2)</h1>
               <h3>Name</h3>
               <input type="text" id="name-input">
-
               <h3>Email</h3>
               <input type="text" id="email-input">
-
               <h3>What time?</h3>
               <select name="time" id="available-time"></select>
-
               <h3>How many participants?</h3>
               <select name="people" id="participants-count"></select>
-
-
               <button class="fourth-btn" id="submit-btn">Submit booking</button>
               `;
 
