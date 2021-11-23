@@ -59,14 +59,16 @@
 
 .modal-container #thank-you {
     font-size: 42px;
-    text-align: center;
     margin-top: 30%;
+    text-align: center;
+    margin-left: -0px;
 }
 
 .modal-container #link-back {
     font-size: 24px;
     text-align: center;
-    margin-left: 372px;
+    margin-left: 350px;
+    text-decoration: underline;
 }
 
 
