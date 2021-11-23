@@ -2,7 +2,6 @@ export default function noMatches() {
   const noMatchesDiv = document.querySelector('.no-matches');
   const cards = document.querySelectorAll('article');
   let cardsArray = Array.prototype.slice.call(cards);
-  console.log(cardsArray);
 
   const displayNone = (card) => card.style.display == 'none';
 
