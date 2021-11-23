@@ -3,7 +3,6 @@ import filterByTag from './filterByTag.js';
 export default function renderTagsToFilterSection(data) {
     let sorterdTags = filterToMaxOneTagPerName(getLabelsFromApi(data));
     renderToFilterByTag(sorterdTags);
-    //add btn finctionallity to all tags
     filterByTag();
 }
 // [x] kolla igenom alla labels och spara dem i en ny array
