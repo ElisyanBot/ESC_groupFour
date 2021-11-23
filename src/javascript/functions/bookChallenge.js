@@ -72,31 +72,31 @@ export default function bookChallenge(data) {
               const nameInput = document.getElementById('name-input');
               const emailInput = document.getElementById('email-input');
 
+              // CONVERT PARTICIPANTS TO INTEGER NUMBER
+              const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
+              const participantsInteger = parseInt(participantsConvert, 10);
+
               submitBtn.addEventListener("click", () => {
-                const bookingCredentials = { name: nameInput.value, email: emailInput.value, date: DateInput.value, time: document.getElementById('available-time').value, participants: document.getElementById('participants-count').value.replace(' Participants', '') };
-                console.log(bookingCredentials.name);
+                const bookingCredentials = {
+                  name: nameInput.value,
+                  email: emailInput.value,
+                  date: DateInput.value,
+                  time: document.getElementById('available-time').value,
+                  participants: participantsInteger
+                };
+                console.log(bookingCredentials); // CHECK IF ALL DATA IS SAVED
 
                 fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
                   method: 'POST',
                   mode: 'cors',
-                  body: JSON.stringify({
-                    name: bookingCredentials.name,
-                    email: bookingCredentials.email,
-                    date: bookingCredentials.date,
-                    time: bookingCredentials.time,
-                    participants: bookingCredentials.participants,
-                  }),
-                  headers: { 'Content-Type': 'application/json' }
-                }).then(function (response) {
-                  if (response.ok) {
-                    return response.json();
-                  }
-                  return Promise.reject(response);
-                }).then(function (data) {
-                  console.log(data);
-                }).catch(function (error) {
-                  console.warn('Something went wrong.', error);
-                });
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(bookingCredentials),
+                })
+
+                modal.innerHTML = `
+                <h1 id="thank-you">Thank you!</h1>
+                <a id="link-back" target="_blank" href="#">Back to challenges</a>
+                `;
               })
             }
           })
