@@ -7,13 +7,20 @@ const RatingStorage = {
     biggerThanValue: 5
 };
 
-export function byRatingFilterBtns(){
+const cards = []
+
+export function byRatingFilterBtns(data){
     const biggerThanList = document.querySelector('#rating-biggerThan');
     const lessThanList = document.querySelector('#rating-lessThan');
     const biggerThanItem = document.querySelectorAll('#rating-biggerThan > li');
     const lessThanItem = document.querySelectorAll('#rating-lessThan > li');
     
- 
+    data.forEach(Challenge => {
+        cards.push({
+            idOfCard: 'id' + data.indexOf(Challenge),
+            ratingOfCard: Challenge.rating
+        })
+    })
     
     lessThanList.addEventListener('click', (e) => {
         RatingStorage.lessThanValue = setRatingFilter(e, lessThanItem, lessThanItem);
@@ -23,6 +30,7 @@ export function byRatingFilterBtns(){
         RatingStorage.biggerThanValue = setRatingFilter(e, biggerThanItem, biggerThanItem);
         activeFilters(RatingStorage.lessThanValue, RatingStorage.biggerThanValue);
      });
+     
 }
 
 //filter-meny stars functionality
@@ -47,12 +55,20 @@ function setRatingFilter(e, starRatingItemArr, starRatingListId){
 
 //counts every checkd ratingStar on card.
 function getRatingFromCard(card){
-    let cardRating = 0;
-    card.querySelectorAll('ul > li').forEach(star => {
-        if(card.style.display !== "none")
-        if(star.classList.value == 'checked') cardRating++;
-    });
-    return cardRating;
+    let rating = 0;
+    cards.forEach( index => {
+         if(card.id !== index.idOfCard) return;
+         rating = index.ratingOfCard;
+     })
+    return rating
+
+     // let cardRating = 0;
+    // card.querySelectorAll('ul > li').forEach(star => {
+    //     if(card.style.display !== "none")
+    //     if(star.classList.value == 'checked') cardRating++;
+    // });
+    // return cardRating;
+
 }
 
    export function displayCardsByRating(){

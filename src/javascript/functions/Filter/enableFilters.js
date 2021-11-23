@@ -19,7 +19,7 @@ export default function enableFilters(data) {
         if (document.querySelector(".filter-container")) {
             filterBySearch();
             filterByType(data);
-            byRatingFilterBtns();
+            byRatingFilterBtns(data);
             renderfilterTagsInMeny(data);
         }
     })
