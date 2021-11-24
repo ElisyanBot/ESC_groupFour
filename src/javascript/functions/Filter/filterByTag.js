@@ -2,8 +2,10 @@ import { showOnlineCards, showOnsiteCards } from "./filterByType.js";
 import activeFilters from "./activeFilterCheck.js";
 import noMatches from "../noMatch.js";
 
-const tagStorageArray = []
+let tagStorageArray = []
 //Factory function, creates an tag(label) obj
+
+
 function createTagObj(tagName) {
     return {
         tagName: tagName,
@@ -29,6 +31,11 @@ function getObjIndex(tagBtnText) {
 /* ========================= main function ==================================*/
 //creates dynamic addEventListener on TagBtn, if the labels(tags) change
 export default function filterByTag() {
+    //restore filter => displays all card to == "flex"
+    document.getElementById('close-filter-btn').addEventListener("click", () =>{
+        tagStorageArray = []
+   })
+   
     document.querySelectorAll('.filter-byTag-container button')
         .forEach(tagBtn => {
             tagStorageArray.push(createTagObj(tagBtn.innerText));

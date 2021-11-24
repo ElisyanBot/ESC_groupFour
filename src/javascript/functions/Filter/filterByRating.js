@@ -15,6 +15,12 @@ export function byRatingFilterBtns(data){
     const biggerThanItem = document.querySelectorAll('#rating-biggerThan > li');
     const lessThanItem = document.querySelectorAll('#rating-lessThan > li');
     
+    //restore filter => displays all card to == "flex"
+    document.getElementById('close-filter-btn').addEventListener("click", () =>{
+       RatingStorage.lessThanValue = 0;
+       RatingStorage.biggerThanValue = 5;
+   })
+
     data.forEach(Challenge => {
         cards.push({
             idOfCard: 'id' + data.indexOf(Challenge),
