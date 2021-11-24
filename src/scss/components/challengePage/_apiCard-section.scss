@@ -1,18 +1,18 @@
 @use "../../utilities/" as u;
 
-#card-section {
+section#card-section {
   @include u.content-max-width;
-  @include u.flex(row, space-evenly, flex-start);
+  @include u.flex(row, space-between, flex-start);
   flex-wrap: wrap;
   min-height: 20vh;
-  border: 3px solid red;
   margin: 10rem auto;
+  padding: 0;
 
-  .card{
-      margin: 3rem 0;
+  .card {
+    margin: 3rem 0;
   }
 
   @media screen and (max-width: u.$mobile-size) {
-  @include u.flex(column, flex-start, center);
+    @include u.flex(column, flex-start, center);
   }
 }
