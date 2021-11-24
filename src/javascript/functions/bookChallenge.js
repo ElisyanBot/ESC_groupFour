@@ -28,7 +28,7 @@ export default function bookChallenge(data) {
               <button class="fourth-btn" id="search-btn">Search available times</button>
               `;
 
-        // RENDER A BLURRED BACKGROUND - CLICKING OUTSIDE THE MODAL EXITS THE BOOKING
+        // CLICKING OUTSIDE THE MODAL EXITS THE BOOKING - REMOVES MODAL & BACKGROUND
         modalBackground.addEventListener("click", () => {
           document.querySelector('.modal-container').style.animation = "modal-out 0.3s forwards";
           modalBackground.remove()
