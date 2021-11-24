@@ -12,7 +12,11 @@ export default function bookChallenge(data) {
 
 
 
-        // STEP 1 - RENDER THE MODAL - USER INPUT PREFERED DATE
+        // STEP 1 - RENDER THE MODAL & BACKGROUND - USER INPUT PREFERED DATE
+        let modalBackground = document.createElement('div');
+        modalBackground.className = 'modal-background';
+        document.body.appendChild(modalBackground);
+
         const modal = document.createElement('div');
         modal.className = 'modal-container';
         document.body.appendChild(modal);
@@ -23,6 +27,15 @@ export default function bookChallenge(data) {
               <input type="text" id="date-input">
               <button class="fourth-btn" id="search-btn">Search available times</button>
               `;
+
+        // RENDER A BLURRED BACKGROUND - CLICKING OUTSIDE THE MODAL EXITS THE BOOKING
+        modalBackground.addEventListener("click", () => {
+          document.querySelector('.modal-container').style.animation = "modal-out 0.3s forwards";
+          modalBackground.remove()
+          setTimeout(() => {
+            modal.remove()
+          }, 300);
+        })
 
         // STEP 2 UPDATE MODAL - INPUT USER CREDENTIALS - CHOOSE TIME & PARTICIPANTS 
         if (document.querySelector('#search-btn')) {
@@ -66,8 +79,6 @@ export default function bookChallenge(data) {
               const submitBtn = document.getElementById("submit-btn");
               const nameInput = document.getElementById('name-input');
               const emailInput = document.getElementById('email-input');
-
-              
 
               submitBtn.addEventListener("click", () => {
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
