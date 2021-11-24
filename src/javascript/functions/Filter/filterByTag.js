@@ -55,7 +55,6 @@ export function displayCardsForActiveTags() {
     activeTagsArray.forEach(index => {
         findByCardTagName(index)
     })
-    noMatches();
 }
 
 //looking at the tagStorage for of tabObj.active == true
