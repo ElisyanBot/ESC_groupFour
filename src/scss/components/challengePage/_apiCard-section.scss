@@ -2,7 +2,7 @@
 
 section#card-section {
   @include u.content-max-width;
-  @include u.flex(row, space-between, flex-start);
+  @include u.flex(row, space-evenly, flex-start);
   flex-wrap: wrap;
   min-height: 20vh;
   margin: 10rem auto;

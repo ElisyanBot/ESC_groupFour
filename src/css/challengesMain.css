@@ -628,6 +628,7 @@ nav.footer-nav li.margin-up {
   width: 100%;
   max-width: 1300px;
   margin: auto;
+  max-width: 1240px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 10rem 15rem 15rem;
@@ -640,6 +641,15 @@ nav.footer-nav li.margin-up {
   -ms-animation: pop-in 0.3s;
   animation-fill-mode: forwards;
   opacity: 0;
+}
+@media screen and (max-width: 840px) {
+  .filter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: calc(100% - 50px);
+  }
 }
 .filter-container div {
   width: 100%;
@@ -798,7 +808,7 @@ section#card-section {
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
   min-height: 20vh;

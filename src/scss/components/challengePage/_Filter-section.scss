@@ -6,6 +6,7 @@ $border-color: rgb(184, 184, 184);
     margin: 3rem 0;
 
     gap: 3rem;
+
     h2 {
         font-size: u.$medium-header-font;
         font-weight: 400;
@@ -15,10 +16,12 @@ $border-color: rgb(184, 184, 184);
         height: 4rem;
         font-size: u.$small-font;
     }
+    
 }
 
 .filter-container {
     @include u.content-max-width;
+    max-width: 1240px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 10rem 15rem 15rem;
@@ -28,12 +31,16 @@ $border-color: rgb(184, 184, 184);
 
     gap: 0rem 1rem;
     padding: 1rem;
-
     -webkit-animation: pop-in 0.3s;
     -moz-animation: pop-in 0.3s;
     -ms-animation: pop-in 0.3s;
     animation-fill-mode: forwards;
     opacity: 0;
+
+    @media screen and (max-width: u.$tablet-size) {
+        @include u.flex(column, space-evenly, center);
+        max-width: calc(100% - 50px);
+    }
 
     div {
         width: 100%;
