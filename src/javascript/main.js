@@ -7,13 +7,13 @@ import { fetchData } from "./functions/fetchData.js";
 const data = await fetchData();
 
 // For index
-import indexRenderChallenges from './functions/indexRenderChallenges.js';
+import { renderIndex } from './functions/renderChallenges.js';
 if (body.className == "index") {
-  indexRenderChallenges(data);
+  renderIndex(data);
 }
 
 // For challenge
-import renderChallenges from './functions/renderChallenges.js';
+import { renderChallenges } from './functions/renderChallenges.js';
 import enableFilters from './functions/filter/enableFilters.js';
 if (body.className == "challengesPage") {
   enableFilters(data);
