@@ -412,7 +412,7 @@ nav ul.display-mobile-meny-items li a {
   height: 2rem;
 }
 
-section#card-articles-container {
+section#card-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -425,11 +425,11 @@ section#card-articles-container {
   overflow-x: scroll;
   overflow-y: hidden;
 }
-section#card-articles-container::-webkit-scrollbar {
+section#card-section::-webkit-scrollbar {
   display: none;
 }
 @media screen and (max-width: 840px) {
-  section#card-articles-container {
+  section#card-section {
     justify-content: flex-start;
   }
 }
@@ -751,38 +751,65 @@ nav.footer-nav li.margin-up {
   padding: 1rem;
   font-size: 1.8rem;
 }
+
+.no-matches-container {
+  display: flex;
+  justify-content: center;
+}
+.no-matches-container .no-matches-text {
+  font-size: 4.5rem;
+  transform: translateY(150px);
+}
+
 /* ======= .filter-container @KEYFRAMES ======= */
 @-webkit-keyframes pop-in {
-  0% { opacity: 0; -webkit-transform: scale(0.9); }
-  100% { opacity: 1; -webkit-transform: scale(1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.9);
   }
-  @-moz-keyframes pop-in {
-  0% { opacity: 0; -moz-transform: scale(0.9); }
-  100% { opacity: 1; -moz-transform: scale(1); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
   }
-  @keyframes pop-in {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
+}
+@-moz-keyframes pop-in {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.9);
   }
-
-#card-section {
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+}
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+section#card-section {
   width: 100%;
   max-width: 1300px;
   margin: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
   min-height: 20vh;
-  border: 3px solid red;
   margin: 10rem auto;
+  padding: 0;
 }
-#card-section .card {
+section#card-section .card {
   margin: 3rem 0;
 }
 @media screen and (max-width: 480px) {
-  #card-section {
+  section#card-section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
