@@ -67,11 +67,13 @@ export default function bookChallenge(data) {
               const nameInput = document.getElementById('name-input');
               const emailInput = document.getElementById('email-input');
 
-              // CONVERT PARTICIPANTS TO INTEGER NUMBER
-              const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
-              const participantsInteger = parseInt(participantsConvert, 10);
+              
 
               submitBtn.addEventListener("click", () => {
+                // CONVERT PARTICIPANTS TO INTEGER NUMBER
+                const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
+                const participantsInteger = parseInt(participantsConvert, 10);
+
                 const bookingCredentials = {
                   name: nameInput.value,
                   email: emailInput.value,
