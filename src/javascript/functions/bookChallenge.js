@@ -90,7 +90,7 @@ export default function bookChallenge(data) {
 
                 modal.innerHTML = `
                 <h1 id="thank-you">Thank you!</h1>
-                <a id="link-back" href=".">Back to challenges</a>
+                <a id="link-back" href="javascript:window.location.reload();">Back to challenges</a>
                 `;
               })
             }
