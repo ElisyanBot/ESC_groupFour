@@ -15,7 +15,7 @@ export default function render(data, idOfCard) {
       <picture class="card-top-part"><img src = ${data.image}></picture>
       <div class="card-bottom-part">
         <div class="card-text-container">
-          <h2> ${data.title}</h2>
+          <h2>${data.title} (${data.type})</h2>
           <div class="card-subheader-container">
             <ul class="rating-stars">
               <li>&#9733;</li>
