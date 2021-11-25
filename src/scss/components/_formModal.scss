@@ -1,10 +1,22 @@
+@use '../utilities' as u;
+
 .modal-container {
     flex-direction: row;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     border-radius: 8px;
-    width: 900px;
-    height: 700px;
+    
+    width: 85%;
+    max-width: 90rem;
+    height: 70rem;
+    padding: 5rem;
+    
+    @media screen and (max-width: u.$tablet-size) { 
+        height: 100%;
+        min-height: 70rem;
+        max-height: 73rem;
+    }
+
     position: fixed;
     left: 50%;
     top: 50%;
@@ -15,64 +27,55 @@
     -ms-animation: modal-in 0.3s;
     animation-fill-mode: forwards;
     opacity: 0;
+    
+    h1 {
+        font-size: 2.8rem;
+        margin: 5rem 0;
+        @media screen and (max-width: u.$tablet-size) { 
+            font-size: 2.5rem;
+        }
+    }
+    
+    p {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+    
+    h3 {
+        font-size: 2rem;
+        margin: 2rem 0 0 0;
+    }
+    
+    input, select {
+        font-size: 2.4rem;
+        width: 26rem;
+        height: 5rem;
+    }
+    
+    
+    button {
+        position: absolute;
+        bottom: 5%;
+        right: 5rem;
+    }
+    
+   #thank-you {
+        font-size: 4.2rem;
+        width: fit-content;
+        margin: 24rem auto 0 auto;
+    }
+    
+    #link-back {
+        display: flex; //fixes the placement issue
+        font-size: 2.4rem;
+        width: fit-content;
+        margin: 1rem auto;
+        text-decoration: underline;
+    }
 }
-
-.modal-container > h1 {
-    font-size: 28px;
-    margin-left: 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.modal-container > p {
-    font-size: 24px;
-    margin-left: 50px;
-    margin-bottom: 20px;
-}
-
-.modal-container > h3 {
-    font-size: 20px;
-    margin-left: 50px;
-    margin-top: 20px;
-}
-
-.modal-container > input {
-    font-size: 24px;
-    width: 260px;
-    height: 50px;
-    margin-left: 50px;
-    margin-bottom: 10px;
-}
-
-.modal-container > select {
-    font-size: 24px;
-    width: 260px;
-    height: 50px;
-    margin-left: 50px;
-}
-
-.modal-container > button {
-    position: fixed;
-    right: 5%;
-    top: 85%;
-}
-
-.modal-container #thank-you {
-    font-size: 42px;
-    margin-top: 30%;
-    text-align: center;
-    margin-left: -0px;
-}
-
-.modal-container #link-back {
-    font-size: 24px;
-    text-align: center;
-    margin-left: 350px;
-    text-decoration: underline;
-}
-
-/* Modal blurred background */
-
+    
+    /* Modal blurred background */
+    
 .modal-background {
     background-color: rgba(255, 255, 255, 0.3);
     width: 100%;
@@ -114,4 +117,4 @@
         0% { opacity: 1; transform: translate(-50%, -50%);}
         50% { transform: translate(-50%, -45%); }
         100% { opacity: 0; transform: translate(-50%, -60%);}
-        }
+    }
