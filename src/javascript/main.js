@@ -1,8 +1,7 @@
-import fetchData from "./functions/fetchData.js";
-const data = await fetchData();
-
 const body = document.querySelector('body');
 
+import fetchData from "./functions/fetchData.js";
+const data = await fetchData();
 
 // For all
 import MobileMeny from './functions/mobileMeny.js';
