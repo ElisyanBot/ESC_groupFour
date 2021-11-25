@@ -3,20 +3,18 @@ import activeFilters from "./activeFilterCheck.js";
 export default function filterByType() {
   const cbOnline = document.querySelector("#filter-checkbox-online");
   const cbOnsite = document.querySelector("#filter-checkbox-onsite");
-  
+
   //restore filter => displays all card to == "flex"
-  document.getElementById('close-filter-btn').addEventListener("click", () =>{
+  document.getElementById('close-filter-btn').addEventListener("click", () => {
     cbOnline.checked === true;
     cbOnsite.checked === true;
   })
 
   cbOnline.addEventListener("click", () => activeFilters());
   cbOnsite.addEventListener("click", () => activeFilters());
-
- 
 }
 
-export function showOnlineCards () {
+export function showOnlineCards() {
   const onlineCards = document.querySelectorAll(".online");
   const cbOnline = document.querySelector("#filter-checkbox-online");
 

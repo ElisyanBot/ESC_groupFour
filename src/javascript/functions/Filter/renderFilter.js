@@ -3,14 +3,14 @@ export default function renderFilter() {
     // Main function to render the filter-container into the DOM.
     const filterBtn = document.getElementById('open-filter-btn');
     const filterContainer = document.createElement("section");
-        filterContainer.className = "filter-container";
+    filterContainer.className = "filter-container";
 
-        const filterSection = document.getElementById('filter-section');
-        filterSection.parentNode.insertBefore(filterContainer, filterSection.nextSibling);
+    const filterSection = document.getElementById('filter-section');
+    filterSection.parentNode.insertBefore(filterContainer, filterSection.nextSibling);
 
-        filterBtn.style.display = "none"; // Only temporary fix to hide filter button.
+    filterBtn.style.display = "none"; // Only temporary fix to hide filter button.
 
-        filterContainer.innerHTML = `
+    filterContainer.innerHTML = `
         <div class="grid-header"> 
                 <h3>Filter challenges</h3>
                 <button id="close-filter-btn"><i class="fas fa-times"></i></button>
@@ -56,5 +56,5 @@ export default function renderFilter() {
                     <input id="filter-search-input" type="text" placeholder="Start typing to filter">
                 </div>
             </div>
-        `;      
+        `;
 }

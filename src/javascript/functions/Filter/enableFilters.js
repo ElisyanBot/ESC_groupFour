@@ -27,13 +27,13 @@ export default function enableFilters(data) {
 // Function gets called to be able to disable the filter-container. It will be removed from the DOM.
 function disableFilters() {
     const closeFilterBtn = document.getElementById('close-filter-btn');
-    
+
     closeFilterBtn.addEventListener('click', () => {
 
         const filterContainer = document.querySelector('.filter-container');
         filterContainer.remove();
 
         const filterBtn = document.getElementById('open-filter-btn');
-        filterBtn.style.display = ""; //Only temporary fix to show filter button.
+        filterBtn.style.display = "";
     })
 }

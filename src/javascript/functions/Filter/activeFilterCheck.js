@@ -8,7 +8,6 @@ function showAllCards() {
     document.querySelectorAll('.card').forEach(card => card.style.display = "flex");
 }
 
-
 export default function activeFilters() {
     //displays all cards
     showAllCards();

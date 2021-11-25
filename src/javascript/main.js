@@ -1,4 +1,4 @@
-import { fetchData } from "./functions/fetchData.js";
+import fetchData from "./functions/fetchData.js";
 const data = await fetchData();
 
 const body = document.querySelector('body');

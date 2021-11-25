@@ -1,6 +1,6 @@
 import { setStarsInRating } from "./renderStars.js";
 
-export default async function render(data, idOfCard) {
+export default function render(data, idOfCard) {
   const cardSection = document.querySelector('#card-section')
 
   const newCard = document.createElement('article');

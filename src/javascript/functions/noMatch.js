@@ -3,9 +3,7 @@ export default function noMatches() {
   const cards = document.querySelectorAll('article');
   let cardsArray = Array.prototype.slice.call(cards);
 
-  const displayNone = (card) => card.style.display == 'none';
-
-  if (cardsArray.every(displayNone)) {
+  if (cardsArray.every((card) => card.style.display == 'none')) {
     noMatchesDiv.innerHTML = '<p class="no-matches-text">No matching challenges</p>'
   }
   else {
