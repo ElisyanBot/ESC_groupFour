@@ -1,15 +1,11 @@
 import { setStarsInRating } from "./renderStars.js";
 
 export default function render(data, idOfCard) {
-  const cardSection = document.querySelector('#card-section')
-
   const newCard = document.createElement('article');
   newCard.setAttribute("id", "id" + idOfCard);
   newCard.setAttribute("class", `card ${data.type}`);
 
-  for (let i = 0; i < data.labels.length; i++) {
-    newCard.classList.add(`${data.labels[i]}`);
-  }
+  data.labels.forEach(label => newCard.classList.add(`${label}`));
 
   newCard.innerHTML = `
       <picture class="card-top-part"><img src = ${data.image}></picture>
@@ -36,7 +32,7 @@ export default function render(data, idOfCard) {
       </div>
       `;
 
-  cardSection.appendChild(newCard);
+  document.querySelector('#card-section').appendChild(newCard);
 
-  setStarsInRating(idOfCard, data.rating)
+  setStarsInRating(idOfCard, data.rating);
 }
