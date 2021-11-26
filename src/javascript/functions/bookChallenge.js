@@ -17,16 +17,16 @@ export default function bookChallenge(data) {
         modalBackground.className = 'modal-background';
         document.body.appendChild(modalBackground);
 
-        const modal = document.createElement('div');
+        const modal = document.createElement('form');
         modal.className = 'modal-container';
         document.body.appendChild(modal);
         modal.innerHTML = `
               <h1>Book room "${data[i].title}" (step 1)</h1>
               <p>What date would you like to come?<p>
               <h3>Date</h3>
-              <input type="text" id="date-input">
-              <button class="fourth-btn" id="search-btn">Search available times</button>
-              `;
+              <input type="text" id="date-input" placeholder="2022-04-01" required>
+              <button type="submit" class="fourth-btn" id="search-btn">Search available times</button>
+          `;
 
         // CLICKING OUTSIDE THE MODAL EXITS THE BOOKING - REMOVES MODAL & BACKGROUND
         modalBackground.addEventListener("click", () => {
@@ -43,18 +43,19 @@ export default function bookChallenge(data) {
           const DateInput = document.getElementById("date-input");
 
           searchBtn.addEventListener("click", () => {
+            if(DateInput.value == "") return alert('OBS! you need to put in a valid date to book a Room');
             modal.innerHTML = `
-              <h1>Book room "${data[i].title}" (step 2)</h1>
-              <h3>Name</h3>
-              <input type="text" id="name-input">
-              <h3>Email</h3>
-              <input type="text" id="email-input">
-              <h3>What time?</h3>
-              <select name="time" id="available-time"></select>
-              <h3>How many participants?</h3>
-              <select name="people" id="participants-count"></select>
-              <button class="fourth-btn" id="submit-btn">Submit booking</button>
-              `;
+                <h1>Book room "${data[i].title}" (step 2)</h1>
+                <h3>Name</h3>
+                <input type="text" id="name-input" placeholder="Enter your name here" required>
+                <h3>Email</h3>
+                <input type="email" id="email-input" placeholder="userName@mail.com" required>
+                <h3>What time?</h3>
+                <select name="time" id="available-time" required></select>
+                <h3>How many participants?</h3>
+                <select name="people" id="participants-count"></select>
+                <button type="submit" class="fourth-btn" id="submit-btn">Submit booking</button>
+             `;
 
             // GET AVAILABLE TIMES FROM BOOKING API
             fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" + "?date=" + DateInput.value)
@@ -81,6 +82,10 @@ export default function bookChallenge(data) {
               const emailInput = document.getElementById('email-input');
 
               submitBtn.addEventListener("click", () => {
+              if(nameInput.value == "")  return alert("Obs! you need to put in a name!")
+              if(emailInput.value == "")  return alert("Obs! you need to put in valid E-mail adress!")
+              if(document.getElementById('available-time').value == "")  return alert("Obs! you need to put in time!")
+
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
                 const participantsInteger = parseInt(participantsConvert, 10);
