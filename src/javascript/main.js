@@ -11,8 +11,10 @@ bookChallenge(data);
 
 // For index
 import { renderIndex } from './functions/renderChallenges.js';
+import links from "./functions/links.js";
 if (body.className == "index") {
   renderIndex(data);
+  links();
 }
 
 // For challenge
