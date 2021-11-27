@@ -1,9 +1,15 @@
 export default function links() {
-  document.querySelector('.primary-btn').addEventListener('click', () => {
-    document.location.href = './src/Pages/challengesPage.html';
-  });
+  const onlineLinks = document.querySelectorAll('.primary-btn');
+  for (const button of onlineLinks) {
+    button.addEventListener('click', () => {
+      document.location.href = './src/Pages/challengesPage.html';
+    });
+  }
 
-  document.querySelector('.secondary-btn').addEventListener('click', () => {
-    document.location.href = './src/Pages/challengesPage.html';
-  });
+  const onsiteLinks = document.querySelectorAll('.secondary-btn');
+  for (const button of onsiteLinks) {
+    button.addEventListener('click', () => {
+      document.location.href = './src/Pages/challengesPage.html';
+    });
+  }
 }
