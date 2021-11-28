@@ -9,7 +9,7 @@ function showAllCards() {
 }
 
 export default function activeFilters() {
-    //displays all cards
+    //displays all cards at challenges section
     showAllCards();
     //filter cards out if filters is active
     LookForSearchInputValue();
