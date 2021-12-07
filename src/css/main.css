@@ -38,7 +38,7 @@ img {
   height: 100%;
   object-fit: cover;
   overflow: hidden;
-  background-color: #011827;
+  background-color: #021928;
 }
 
 a {
@@ -59,7 +59,7 @@ header {
   height: 20vh;
   min-height: 11rem;
   position: relative;
-  background-color: #011827;
+  background-color: #021928;
   padding: 1rem;
 }
 @media screen and (max-width: 840px) {
@@ -176,7 +176,7 @@ nav.header-nav ul li a {
 }
 
 button#meny-btn {
-  background-color: #011827;
+  background-color: #021928;
   border: none;
   color: white;
   display: block;
@@ -197,7 +197,7 @@ button#meny-btn .fas {
 }
 
 li#close-menyBtn {
-  background-color: #011827;
+  background-color: #021928;
   border: none;
   color: white;
   display: none;
@@ -238,7 +238,7 @@ nav ul.display-mobile-meny-items {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #011827;
+  background-color: #021928;
   width: 85%;
   height: 95%;
   position: relative;
@@ -318,7 +318,7 @@ nav ul.display-mobile-meny-items li a {
   width: 100%;
   max-width: 100vw;
   height: 50vh;
-  background-color: #011827;
+  background-color: #021928;
 }
 #story-article-container div {
   display: flex;
@@ -415,7 +415,7 @@ nav ul.display-mobile-meny-items li a {
   color: white;
   font-size: 2.4rem;
   font-weight: bold;
-  color: #011827;
+  color: #021928;
   background-color: #8ACFE5;
 }
 .secondary-btn span.btn-icon {
@@ -537,7 +537,7 @@ nav ul.display-mobile-meny-items li a {
   gap: 1.5rem;
 }
 .testimonial-quote picture {
-  background-color: #011827;
+  background-color: #021928;
   min-width: 8rem;
   height: 8rem;
   border-radius: 50%;
@@ -915,7 +915,7 @@ form.modal-container #link-back {
 }
 /* =========  flex version for new design (figma version) ====================*/
 footer {
-  background-color: #011827;
+  background-color: #021928;
   display: flex;
   flex-direction: row;
   justify-content: center;
