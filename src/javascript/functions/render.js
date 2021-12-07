@@ -8,8 +8,10 @@ export default function render(data, idOfCard) {
   data.labels.forEach(label => newCard.classList.add(`${label}`));
 
   newCard.innerHTML = `
-      <picture class="card-top-part"><img src = ${data.image}></picture>
-      <div class="card-bottom-part">
+  <picture class="card-top-part"><img src = ${data.image} alt="challenges room image">
+   <span class="fa"></span>
+  </picture>
+  <div class="card-bottom-part">
         <div class="card-text-container">
           <h2>${data.title} (${data.type})</h2>
           <div class="card-subheader-container">
