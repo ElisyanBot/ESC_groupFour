@@ -983,5 +983,12 @@ section#card-section .card {
     align-items: center;
   }
 }
+@media screen and (min-width: 1280px) {
+  section#card-section {
+    width: 94%;
+    max-width: 1800px;
+    margin: auto;
+  }
+}
 
 /*# sourceMappingURL=challengesMain.css.map */

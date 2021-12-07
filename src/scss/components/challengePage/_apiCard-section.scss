@@ -15,4 +15,8 @@ section#card-section {
   @media screen and (max-width: u.$mobile-size) {
     @include u.flex(column, flex-start, center);
   }
+
+  @media screen and (min-width: u.$desktop-size) {
+    @include u.content-max-width-ultra-wide;
+  }
 }
