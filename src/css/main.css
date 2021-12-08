@@ -982,6 +982,30 @@ nav.footer-nav li.margin-up {
   }
 }
 
+/* HOOVER EFFECTS ON BUTTONS & LINKS */
+.header-nav li > a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
+.footer-nav li > a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
+.primary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+.secondary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+.third-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+.fourth-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+
 /* ================  gird design (wireframe layout for footer) ================================= */
 
 /*# sourceMappingURL=main.css.map */
