@@ -6,9 +6,9 @@ export default function render(data, idOfCard) {
   newCard.setAttribute("class", `card ${data.type}`);
 
   data.labels.forEach(label => newCard.classList.add(`${label}`));
-  let logoType;
-   data.type === "online" ? logoType = "fa-laptop" : logoType = "fa-home";
-
+  
+  let logoType = data.type === "online" ? "fa-laptop" : "fa-home";
+  
   newCard.innerHTML = `
   <picture class="card-top-part"><img src = ${data.image} alt="challenges room image">
    <span class="fa ${logoType}"></span>
