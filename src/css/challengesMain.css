@@ -163,6 +163,9 @@ nav.header-nav ul li a {
   font-size: 1.8rem;
   color: white;
 }
+nav.header-nav ul li a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
 @media screen and (max-width: 840px) {
   nav.header-nav {
     overflow: hidden;
@@ -319,6 +322,10 @@ nav ul.display-mobile-meny-items li a {
   width: 2rem;
   height: 2rem;
 }
+.primary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
 @media screen and (max-width: 840px) {
   .primary-btn {
     background: none;
@@ -356,6 +363,10 @@ nav ul.display-mobile-meny-items li a {
   width: 2rem;
   height: 2rem;
 }
+.secondary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
 
 .third-btn {
   display: flex;
@@ -387,6 +398,10 @@ nav ul.display-mobile-meny-items li a {
   background-color: #8ACFE5;
   color: white;
 }
+.third-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
 
 .fourth-btn {
   display: flex;
@@ -410,6 +425,10 @@ nav ul.display-mobile-meny-items li a {
   color: #8ACFE5;
   width: 2rem;
   height: 2rem;
+}
+.fourth-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
 }
 
 section#card-section {
@@ -744,6 +763,9 @@ nav.footer-nav li {
 nav.footer-nav li a {
   color: white;
 }
+nav.footer-nav li a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
 nav.footer-nav li.bold-text {
   font-weight: bold;
 }
@@ -838,6 +860,9 @@ nav.footer-nav li.margin-up {
 .filter-container .grid-header button#close-filter-btn .fas {
   font-size: 2.8rem;
 }
+.filter-container .grid-header button#close-filter-btn:hover {
+  transform: scale(1.2);
+}
 .filter-container .grid-item {
   display: flex;
   flex-direction: column;
@@ -878,6 +903,7 @@ nav.footer-nav li.margin-up {
 }
 .filter-container .grid-child-two div ul.rating-stars li:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 .filter-container .grid-child-two div p {
   display: flex;
@@ -905,6 +931,9 @@ nav.footer-nav li.margin-up {
   padding: 0.5rem 1.5rem;
   border: 2.5px solid #b8b8b8;
   border-radius: 2rem;
+}
+.filter-container .grid-child-three div button:hover {
+  font-weight: bold;
 }
 .filter-container .grid-child-four {
   grid-column: 5/9;
@@ -982,39 +1011,6 @@ section#card-section .card {
     justify-content: flex-start;
     align-items: center;
   }
-}
-
-/* HOOVER EFFECTS ON BUTTONS & LINKS */
-.header-nav li > a:hover {
-  text-shadow: 0px 0px 10px #929292;
-}
-.footer-nav li > a:hover {
-  text-shadow: 0px 0px 10px #929292;
-}
-.primary-btn:hover {
-  transform: scale(1.015);
-  box-shadow: 0px 0px 5px #929292;
-}
-.secondary-btn:hover {
-  transform: scale(1.015);
-  box-shadow: 0px 0px 5px #929292;
-}
-.third-btn:hover {
-  transform: scale(1.015);
-  box-shadow: 0px 0px 5px #929292;
-}
-.fourth-btn:hover {
-  transform: scale(1.015);
-  box-shadow: 0px 0px 5px #929292;
-}
-#close-filter-btn i:hover {
-  transform: scale(1.2);
-}
-.filter-byRank-container li:hover {
-  transform: scale(1.2);
-}
-.filter-byTag-container button:hover {
-  font-weight: bold;
 }
 
 /*# sourceMappingURL=challengesMain.css.map */
