@@ -135,6 +135,11 @@ div.logo-container div.logo-header-container h1 {
     gap: 0px;
   }
 }
+@media screen and (min-width: 1280px) {
+  div.logo-container {
+    margin: 0;
+  }
+}
 
 /*
 ===================  meny in header  ==============================
@@ -618,6 +623,9 @@ article.card {
   border-radius: 8px;
   box-shadow: 0px 0px 15px #929292;
   overflow: hidden;
+}
+article.card:hover {
+  box-shadow: 0px 0px 21px #929292;
 }
 
 picture.card-top-part {
