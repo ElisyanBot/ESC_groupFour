@@ -18,5 +18,7 @@ section#card-section {
 
   @media screen and (min-width: u.$desktop-size) {
     @include u.content-max-width-ultra-wide;
+    margin: 10rem auto;
+    padding: 0;
   }
 }

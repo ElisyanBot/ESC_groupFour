@@ -988,6 +988,8 @@ section#card-section .card {
     width: 94%;
     max-width: 1800px;
     margin: auto;
+    margin: 10rem auto;
+    padding: 0;
   }
 }
 
