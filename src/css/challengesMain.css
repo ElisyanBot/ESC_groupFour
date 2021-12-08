@@ -453,7 +453,7 @@ picture.card-top-part {
   height: 50%;
 }
 picture.card-top-part span.fa {
-  background-color: white;
+  color: #8ACFE5;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -463,6 +463,7 @@ picture.card-top-part span.fa {
   position: absolute;
   right: 5%;
   top: 10%;
+  font-size: 1.8rem;
 }
 
 div.card-bottom-part {
