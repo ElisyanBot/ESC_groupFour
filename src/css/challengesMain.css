@@ -984,4 +984,37 @@ section#card-section .card {
   }
 }
 
+/* HOOVER EFFECTS ON BUTTONS & LINKS */
+.header-nav li > a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
+.footer-nav li > a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
+.primary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+.secondary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+.third-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+.fourth-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
+#close-filter-btn i:hover {
+  transform: scale(1.2);
+}
+.filter-byRank-container li:hover {
+  transform: scale(1.2);
+}
+.filter-byTag-container button:hover {
+  font-weight: bold;
+}
+
 /*# sourceMappingURL=challengesMain.css.map */
