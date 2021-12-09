@@ -83,6 +83,7 @@ export default function bookChallenge(data) {
               const phoneInput = document.getElementById('phone-input');
 
               modal.addEventListener("submit", (e) => {
+
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
                 const participantsInteger = parseInt(participantsConvert, 10);
