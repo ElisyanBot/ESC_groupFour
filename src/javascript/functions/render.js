@@ -28,7 +28,7 @@ export default function render(data, idOfCard) {
             ${data.minParticipants} - ${data.maxParticipants} participants
             </small>
           </div>
-          <p>${data.description}</p>
+          <p>${maxDescChar(data.description)}</p>
         </div>
         <div class="card-btn-container">
           <button class="fourth-btn">Book this room</button>
@@ -39,4 +39,19 @@ export default function render(data, idOfCard) {
   document.querySelector('#card-section').appendChild(newCard);
 
   setStarsInRating(idOfCard, data.rating);
+}
+
+function maxDescChar(description){
+  let maxChar = 40;
+  let shortDesc = "";
+  
+  let spaces = 0;
+  for(let i = 0; i < description.length; i++){
+    if(description[i] === " ") spaces++; /*looks for spaces */
+  };
+
+  shortDesc = description.slice(0, maxChar + spaces);
+  description.length > maxChar ? shortDesc += "...": shortDesc;
+  console.log(maxChar);
+  return  shortDesc;
 }
