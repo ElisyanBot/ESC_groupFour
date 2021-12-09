@@ -8,9 +8,6 @@ export default function bookChallenge(data) {
 
     for (let i = 0; i < bookBtn.length; i++) {
       bookBtn[i].addEventListener("click", () => {
-        console.log(data[i].title);
-
-
 
         // STEP 1 - RENDER THE MODAL & BACKGROUND - USER INPUT PREFERED DATE
         let modalBackground = document.createElement('div');
@@ -43,13 +40,15 @@ export default function bookChallenge(data) {
           const DateInput = document.getElementById("date-input");
 
           searchBtn.addEventListener("click", () => {
-            if(DateInput.value == "") return alert('OBS! you need to put in a valid date to book a Room');
+            if (DateInput.value == "") return alert('OBS! You need to enter a valid date to book a room!');
             modal.innerHTML = `
                 <h1>Book room "${data[i].title}" (step 2)</h1>
                 <h3>Name</h3>
                 <input type="text" id="name-input" placeholder="Enter your name here" required>
                 <h3>Email</h3>
                 <input type="email" id="email-input" placeholder="userName@mail.com" required>
+                <h3>Phone</h3>
+                <input type="tel" id="phone-input" placeholder="+46" required>
                 <h3>What time?</h3>
                 <select name="time" id="available-time" required></select>
                 <h3>How many participants?</h3>
@@ -58,7 +57,9 @@ export default function bookChallenge(data) {
              `;
 
             // GET AVAILABLE TIMES FROM BOOKING API
-            fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" + "?date=" + DateInput.value)
+            fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" +
+              "?challenge=" + data[i].id +
+              "&date=" + DateInput.value)
               .then(response => response.json())
               .then(time => {
                 for (let i = 0; i < time.slots.length; i++) {
@@ -77,14 +78,11 @@ export default function bookChallenge(data) {
 
             // STEP 3 SUBMIT BOOKING - SAVE USER CREDENTIALS AS OBJECT - SEND BOOKING DETAILS TO API
             if (document.querySelector('#submit-btn')) {
-              const submitBtn = document.getElementById("submit-btn");
               const nameInput = document.getElementById('name-input');
               const emailInput = document.getElementById('email-input');
+              const phoneInput = document.getElementById('phone-input');
 
-              submitBtn.addEventListener("click", () => {
-              if(nameInput.value == "")  return alert("Obs! you need to put in a name!")
-              if(emailInput.value == "")  return alert("Obs! you need to put in valid E-mail adress!")
-              if(document.getElementById('available-time').value == "")  return alert("Obs! you need to put in time!")
+              modal.addEventListener("submit", (e) => {
 
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
@@ -93,11 +91,13 @@ export default function bookChallenge(data) {
                 const bookingCredentials = {
                   name: nameInput.value,
                   email: emailInput.value,
+                  phone: phoneInput.value,
                   date: DateInput.value,
                   time: document.getElementById('available-time').value,
-                  participants: participantsInteger
+                  participants: participantsInteger,
+                  challenge: data[i].id
                 };
-                console.log(bookingCredentials); // CHECK IF ALL DATA IS SAVED
+                console.log(bookingCredentials)
 
                 fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
                   method: 'POST',
@@ -106,10 +106,13 @@ export default function bookChallenge(data) {
                   body: JSON.stringify(bookingCredentials),
                 })
 
+                e.preventDefault();
+
                 modal.innerHTML = `
                 <h1 id="thank-you">Thank you!</h1>
                 <a id="link-back" href="javascript:window.location.reload();">Back to challenges</a>
                 `;
+
               })
             }
           })
