@@ -8,9 +8,6 @@ export default function bookChallenge(data) {
 
     for (let i = 0; i < bookBtn.length; i++) {
       bookBtn[i].addEventListener("click", () => {
-        console.log(data[i].title);
-
-
 
         // STEP 1 - RENDER THE MODAL & BACKGROUND - USER INPUT PREFERED DATE
         let modalBackground = document.createElement('div');
@@ -43,7 +40,7 @@ export default function bookChallenge(data) {
           const DateInput = document.getElementById("date-input");
 
           searchBtn.addEventListener("click", () => {
-            if(DateInput.value == "") return alert('OBS! You need to enter a valid date to book a room!');
+            if (DateInput.value == "") return alert('OBS! You need to enter a valid date to book a room!');
             modal.innerHTML = `
                 <h1>Book room "${data[i].title}" (step 2)</h1>
                 <h3>Name</h3>
@@ -79,16 +76,11 @@ export default function bookChallenge(data) {
 
             // STEP 3 SUBMIT BOOKING - SAVE USER CREDENTIALS AS OBJECT - SEND BOOKING DETAILS TO API
             if (document.querySelector('#submit-btn')) {
-              const submitBtn = document.getElementById("submit-btn");
               const nameInput = document.getElementById('name-input');
               const emailInput = document.getElementById('email-input');
               const phoneInput = document.getElementById('phone-input');
 
-              submitBtn.addEventListener("click", () => {
-              if(nameInput.value == "")  return alert("Obs! You need to enter a valid name!");
-              if(emailInput.value == "")  return alert("Obs! You need to enter a valid E-mail adress!");
-              if(phoneInput.value == "") return alert("Obs! You need to enter a valid Phone number!");
-              if(document.getElementById('available-time').value == "")  return alert("Obs! You need to choose which time!");
+              modal.addEventListener("submit", (e) => {
 
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
@@ -102,7 +94,6 @@ export default function bookChallenge(data) {
                   time: document.getElementById('available-time').value,
                   participants: participantsInteger
                 };
-                console.log(bookingCredentials); // CHECK IF ALL DATA IS SAVED
 
                 fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
                   method: 'POST',
@@ -110,6 +101,8 @@ export default function bookChallenge(data) {
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(bookingCredentials),
                 })
+
+                e.preventDefault();
 
                 modal.innerHTML = `
                 <h1 id="thank-you">Thank you!</h1>
