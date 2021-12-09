@@ -26,6 +26,9 @@ article.card {
 
     box-shadow: 0px 0px 15px rgb(146, 146, 146);
     overflow: hidden;
+    &:hover{
+        box-shadow: 0px 0px 21px rgb(146, 146, 146);
+    }
 }
 
 // ========= img container =========================
