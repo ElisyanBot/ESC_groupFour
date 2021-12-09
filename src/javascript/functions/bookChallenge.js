@@ -57,7 +57,9 @@ export default function bookChallenge(data) {
              `;
 
             // GET AVAILABLE TIMES FROM BOOKING API
-            fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" + "?date=" + DateInput.value)
+            fetch("https://lernia-sjj-assignments.vercel.app/api/booking/available-times" +
+              "?challenge=" + data[i].id +
+              "&date=" + DateInput.value)
               .then(response => response.json())
               .then(time => {
                 for (let i = 0; i < time.slots.length; i++) {
@@ -80,8 +82,7 @@ export default function bookChallenge(data) {
               const emailInput = document.getElementById('email-input');
               const phoneInput = document.getElementById('phone-input');
 
-              modal.addEventListener("submit", () => {
-
+              modal.addEventListener("submit", (e) => {
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
                 const participantsInteger = parseInt(participantsConvert, 10);
@@ -92,8 +93,10 @@ export default function bookChallenge(data) {
                   phone: phoneInput.value,
                   date: DateInput.value,
                   time: document.getElementById('available-time').value,
-                  participants: participantsInteger
+                  participants: participantsInteger,
+                  challenge: data[i].id
                 };
+                console.log(bookingCredentials)
 
                 fetch('https://lernia-sjj-assignments.vercel.app/api/booking/reservations', {
                   method: 'POST',
@@ -102,10 +105,13 @@ export default function bookChallenge(data) {
                   body: JSON.stringify(bookingCredentials),
                 })
 
+                e.preventDefault();
+
                 modal.innerHTML = `
                 <h1 id="thank-you">Thank you!</h1>
                 <a id="link-back" href="javascript:window.location.reload();">Back to challenges</a>
                 `;
+
               })
             }
           })
