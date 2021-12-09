@@ -43,13 +43,15 @@ export default function bookChallenge(data) {
           const DateInput = document.getElementById("date-input");
 
           searchBtn.addEventListener("click", () => {
-            if(DateInput.value == "") return alert('OBS! you need to put in a valid date to book a Room');
+            if(DateInput.value == "") return alert('OBS! You need to enter a valid date to book a room!');
             modal.innerHTML = `
                 <h1>Book room "${data[i].title}" (step 2)</h1>
                 <h3>Name</h3>
                 <input type="text" id="name-input" placeholder="Enter your name here" required>
                 <h3>Email</h3>
                 <input type="email" id="email-input" placeholder="userName@mail.com" required>
+                <h3>Phone</h3>
+                <input type="tel" id="phone-input" placeholder="+46" required>
                 <h3>What time?</h3>
                 <select name="time" id="available-time" required></select>
                 <h3>How many participants?</h3>
@@ -80,11 +82,13 @@ export default function bookChallenge(data) {
               const submitBtn = document.getElementById("submit-btn");
               const nameInput = document.getElementById('name-input');
               const emailInput = document.getElementById('email-input');
+              const phoneInput = document.getElementById('phone-input');
 
               submitBtn.addEventListener("click", () => {
-              if(nameInput.value == "")  return alert("Obs! you need to put in a name!")
-              if(emailInput.value == "")  return alert("Obs! you need to put in valid E-mail adress!")
-              if(document.getElementById('available-time').value == "")  return alert("Obs! you need to put in time!")
+              if(nameInput.value == "")  return alert("Obs! You need to enter a valid name!");
+              if(emailInput.value == "")  return alert("Obs! You need to enter a valid E-mail adress!");
+              if(phoneInput.value == "") return alert("Obs! You need to enter a valid Phone number!");
+              if(document.getElementById('available-time').value == "")  return alert("Obs! You need to choose which time!");
 
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
@@ -93,6 +97,7 @@ export default function bookChallenge(data) {
                 const bookingCredentials = {
                   name: nameInput.value,
                   email: emailInput.value,
+                  phone: phoneInput.value,
                   date: DateInput.value,
                   time: document.getElementById('available-time').value,
                   participants: participantsInteger
