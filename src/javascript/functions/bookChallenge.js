@@ -80,7 +80,7 @@ export default function bookChallenge(data) {
               const emailInput = document.getElementById('email-input');
               const phoneInput = document.getElementById('phone-input');
 
-              modal.addEventListener("submit", () => {
+              modal.addEventListener("submit", (e) => {
 
                 // CONVERT PARTICIPANTS TO INTEGER NUMBER
                 const participantsConvert = document.getElementById('participants-count').value.replace(' Participants', '');
@@ -101,6 +101,8 @@ export default function bookChallenge(data) {
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify(bookingCredentials),
                 })
+
+                e.preventDefault();
 
                 modal.innerHTML = `
                 <h1 id="thank-you">Thank you!</h1>
