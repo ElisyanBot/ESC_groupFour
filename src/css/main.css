@@ -163,6 +163,9 @@ nav.header-nav ul li a {
   font-size: 1.8rem;
   color: white;
 }
+nav.header-nav ul li a:hover {
+  text-shadow: 0px 0px 10px #929292;
+}
 @media screen and (max-width: 840px) {
   nav.header-nav {
     overflow: hidden;
@@ -388,6 +391,10 @@ nav ul.display-mobile-meny-items li a {
   width: 2rem;
   height: 2rem;
 }
+.primary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
 @media screen and (max-width: 840px) {
   .primary-btn {
     background: none;
@@ -425,6 +432,10 @@ nav ul.display-mobile-meny-items li a {
   width: 2rem;
   height: 2rem;
 }
+.secondary-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
 
 .third-btn {
   display: flex;
@@ -456,6 +467,10 @@ nav ul.display-mobile-meny-items li a {
   background-color: #8ACFE5;
   color: white;
 }
+.third-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
+}
 
 .fourth-btn {
   display: flex;
@@ -479,6 +494,10 @@ nav ul.display-mobile-meny-items li a {
   color: #8ACFE5;
   width: 2rem;
   height: 2rem;
+}
+.fourth-btn:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 5px #929292;
 }
 
 .button-container,
@@ -967,6 +986,9 @@ nav.footer-nav li {
 }
 nav.footer-nav li a {
   color: white;
+}
+nav.footer-nav li a:hover {
+  text-shadow: 0px 0px 10px #929292;
 }
 nav.footer-nav li.bold-text {
   font-weight: bold;

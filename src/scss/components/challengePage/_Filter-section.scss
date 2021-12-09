@@ -68,6 +68,9 @@ $border-color: rgb(184, 184, 184);
             .fas {
                 font-size: u.$big-font;
             }
+            &:hover {
+                transform: scale(1.2);
+            }
         }
     }
 
@@ -103,6 +106,7 @@ $border-color: rgb(184, 184, 184);
                     font-size: u.$medium-font;
                     &:hover {
                         cursor: pointer;
+                        transform: scale(1.2);
                     }
                 }
             }
@@ -129,6 +133,9 @@ $border-color: rgb(184, 184, 184);
                 padding: 0.5rem 1.5rem;
                 border: 2.5px solid $border-color;
                 border-radius: 2rem;
+                &:hover {
+                    font-weight: bold;
+                }
             }
         }
     }

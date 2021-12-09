@@ -53,7 +53,7 @@ export default function renderFilter() {
             <div class="grid-item grid-child-four">
                 <h3>Or type to search for keyword</h3>
                 <div class="filter-bySearch-container">
-                    <input id="filter-search-input" type="text" placeholder="Start typing to filter">
+                    <input id="filter-search-input" type="text" placeholder="Start typing to filter (min. 3 letters)">
                 </div>
             </div>
         `;
